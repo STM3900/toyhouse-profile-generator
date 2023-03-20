@@ -9,13 +9,22 @@
     >
       <i class="fas fa-user-friends" style="opacity: 0.5"></i>
       Relations
-			<button @click="$emit('relationCardDeleted')" type="button" class="close" aria-label="Close">
-      <span aria-hidden="true">&times;</span>
-    </button>
+      <button
+        @click="$emit('relationCardDeleted')"
+        type="button"
+        class="close"
+        aria-label="Close"
+      >
+        <span aria-hidden="true">&times;</span>
+      </button>
     </h5>
     <div class="card-body py-20">
-			<RelationCard v-for="(relation, index) in relations" :relationInfo="relation" @deleted="deleteRelation(index)" />
-			<RelationCardForm @submited="addRelation" />
+      <RelationCard
+        v-for="(relation, index) in relations"
+        :relationInfo="relation"
+        @deleted="deleteRelation(index)"
+      />
+      <RelationCardForm @submited="addRelation" />
     </div>
   </div>
 </template>
@@ -27,21 +36,21 @@ const relations = ref([
   {
     title: "Name",
     description: "description",
-    img: "https://cdn.discordapp.com/attachments/455791465734602782/1087278797621039144/Mibot_happy.jpg"
-  }
+    img: "https://cdn.discordapp.com/attachments/455791465734602782/1087278797621039144/Mibot_happy.jpg",
+  },
 ]);
 
 const addRelation = (relation) => {
-	relations.value.push(  {
+  relations.value.push({
     title: relation.title,
-    img:  relation.img,
+    img: relation.img,
     description: relation.description,
-  })
-}
+  });
+};
 
 const deleteRelation = (index) => {
-  relations.value.splice(index, 1)
-}
+  relations.value.splice(index, 1);
+};
 </script>
 
 <style scoped></style>

@@ -154,6 +154,7 @@ const removeItem = () => {
   };
 
   showPopup.value = false;
+  showNestedPopup.value = false;
 };
 
 const togglePopup = (index) => {
