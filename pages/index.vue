@@ -58,7 +58,7 @@
             aria-labelledby="nav-story-tab"
           >
             <StoryTriggerWarning />
-
+            <StoryCard />
           </div>
         </div>
       </div>
@@ -67,7 +67,6 @@
 </template>
 
 <script setup>
-import { StoryCard } from '~~/.nuxt/components';
 
 const enableRelations = ref(true);
 // https://f2.toyhou.se/file/f2-toyhou-se/images/62415424_wRLztgy4rdOGtD9.png

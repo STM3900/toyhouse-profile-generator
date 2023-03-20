@@ -39,8 +39,7 @@
           aria-label="Close"
         >
           <span aria-hidden="true" class="add"
-            ><i class="fas fa-plus"></i
-          ></span>
+            ><i class="fas fa-image"></i></span>
         </button>
         <button
           @click="removeItem()"

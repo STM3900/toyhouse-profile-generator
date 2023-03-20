@@ -113,7 +113,7 @@
               <textarea
                 class="form-control"
                 aria-label="description"
-                placeholder="He's a cute boi who needs a lot of love xD. He's really childish. he's the brother of Laï and he loves her more than anything else.  He's pan. He's a really joyfull person. He also has ADHD and struggle to socialise because of it, but he tries his best !! Golden retriever energy."
+                placeholder="Write your description here!"
               ></textarea>
             </div>
             <p></p>
@@ -125,7 +125,7 @@
 </template>
 
 <script setup>
-const tags = ref(["He", "19 y/o"]);
+const tags = ref(["He"]);
 const inputValue = ref("");
 
 const addTag = () => {
