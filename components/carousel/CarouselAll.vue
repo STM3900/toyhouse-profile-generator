@@ -104,8 +104,12 @@
 <script setup>
 const carouselImgs = ref([
   {
-    img: "https://cdn.discordapp.com/attachments/455791465734602782/1087314148490219590/Mibot_parfait_-_Copie.png",
+    img: "https://cdn.discordapp.com/attachments/971143024988020837/1087394283855822888/image.png",
     isActive: true,
+  },
+  {
+    img: "https://cdn.discordapp.com/attachments/455791465734602782/1087314148490219590/Mibot_parfait_-_Copie.png",
+    isActive: false,
   },
 ]);
 

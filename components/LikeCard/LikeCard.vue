@@ -1,5 +1,5 @@
 <template>
-  <div class="card mt-4" style="border-radius: 20px; transform: rotate(-2deg)">
+  <div class="card mt-4" style="border-radius: 20px; transform: rotate(2deg)">
     <h5
       class="card-header"
       style="border-top-right-radius: 20px; border-top-left-radius: 20px"

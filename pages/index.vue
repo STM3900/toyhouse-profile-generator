@@ -9,11 +9,11 @@
         <!--
             INTRO CARD
           -->
-        <HeaderCardAll />
+        <HeaderCardAll class="z-top" />
         <!--
             Main section
           -->
-        <div class="tab-content" id="nav-tabContent">
+        <div class="tab-content z-bottom" id="nav-tabContent">
           <div
             class="tab-pane fade active show"
             id="nav-about"
@@ -124,5 +124,13 @@ const enableRelations = ref(true);
 <style scoped>
 .content {
   margin: 50px 0;
+}
+
+.z-top {
+  z-index: 10;
+}
+
+.z-bottom {
+  z-index: 1;
 }
 </style>

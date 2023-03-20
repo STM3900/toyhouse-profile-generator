@@ -102,52 +102,7 @@
                   </div>
                 </form>
               </div>
-              <div class="my-3">
-                <!--
-                          oriantation (put direct link on img)
-                        -->
-                <!-- VALID FLAG IMG  -->
-                <div class="d-inline mr-1">
-                  <img
-                    src="https://cdn-icons-png.flaticon.com/512/8259/8259335.png"
-                    alt=""
-                    width="30px"
-                    height="30px"
-                    style="
-                      filter: contrast(0.9) drop-shadow(0 0 0.1rem black);
-                      opacity: 0.9;
-                      transform: rotate(5deg);
-                    "
-                  />
-                </div>
-                <!-- PLACEHOLDER FLAG IMG  -->
-                <div class="d-inline mr-1">
-                  <img
-                    src="https://cdn-icons-png.flaticon.com/512/8259/8259335.png"
-                    alt=""
-                    width="30px"
-                    height="30px"
-                    style="
-                      filter: contrast(0) drop-shadow(0 0 0.1rem black);
-                      opacity: 0.2;
-                      transform: rotate(-5deg);
-                    "
-                  />
-                </div>
-                <div class="d-inline mr-1">
-                  <img
-                    src="https://cdn-icons-png.flaticon.com/512/8259/8259335.png"
-                    alt=""
-                    width="30px"
-                    height="30px"
-                    style="
-                      filter: contrast(0) drop-shadow(0 0 0.1rem black);
-                      opacity: 0.2;
-                      transform: rotate(5deg);
-                    "
-                  />
-                </div>
-              </div>
+              <HeaderCardPins />
             </div>
           </div>
           <!-- Description  -->
