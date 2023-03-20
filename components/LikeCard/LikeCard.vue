@@ -54,7 +54,7 @@
 </template>
 
 <script setup>
-const likeItems = ref(["Thing"]);
+const likeItems = ref([]);
 const inputValue = ref("");
 
 const addItem = () => {
