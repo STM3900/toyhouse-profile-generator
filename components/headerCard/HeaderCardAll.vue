@@ -59,7 +59,7 @@
                           pronouns
                         -->
                 <div
-                  v-for="tag in tags"
+                  v-for="(tag, index) in tags"
                   style="
                     transform: rotate(-1deg);
                     padding: 2px 10px;
@@ -70,7 +70,37 @@
                   "
                 >
                   {{ tag }}
+                  <button
+                    @click="removeTag(index)"
+                    type="button"
+                    class="close margin-top"
+                    aria-label="Close"
+                  >
+                    <span aria-hidden="true">&times;</span>
+                  </button>
                 </div>
+                <form @submit.prevent="addTag">
+                  <div class="input-group my-2">
+                    <input
+                      v-model="inputValue"
+                      type="text"
+                      class="form-control"
+                      placeholder="tag"
+                      aria-label="tag"
+                      aria-describedby="add-tag"
+                    />
+                    <div class="input-group-append">
+                      <button
+                        class="btn btn-outline-secondary"
+                        type="submit"
+                        id="add-tag"
+                        :disabled="!inputValue"
+                      >
+                        <i class="fas fa-plus"></i>
+                      </button>
+                    </div>
+                  </div>
+                </form>
               </div>
               <div class="my-3">
                 <!--
@@ -123,10 +153,11 @@
           <!-- Description  -->
           <div class="resume col-12 col-lg-9">
             <div class="input-group">
-              <textarea class="form-control" aria-label="description">
-He's a cute boi who needs a lot of love xD. He's really childish. he's the brother of Laï and he loves her more than anything else.  He's pan. He's a really joyfull person. He also has ADHD and struggle to socialise because of it, but he tries his best !! Golden retriever energy.
-  </textarea
-              >
+              <textarea
+                class="form-control"
+                aria-label="description"
+                placeholder="He's a cute boi who needs a lot of love xD. He's really childish. he's the brother of Laï and he loves her more than anything else.  He's pan. He's a really joyfull person. He also has ADHD and struggle to socialise because of it, but he tries his best !! Golden retriever energy."
+              ></textarea>
             </div>
             <p></p>
           </div>
@@ -137,11 +168,25 @@ He's a cute boi who needs a lot of love xD. He's really childish. he's the broth
 </template>
 
 <script setup>
-  const tags = ref(["He", "19 y/o"])
+const tags = ref(["He", "19 y/o"]);
+const inputValue = ref("");
+
+const addTag = () => {
+  tags.value.push(inputValue.value);
+  inputValue.value = "";
+};
+
+const removeTag = (index) => {
+  tags.value.splice(index, 1);
+}
 </script>
 
 <style scoped>
 textarea {
-  height: 150px;
+  height: 120px;
+}
+
+.margin-top {
+  margin-top: -2px;
 }
 </style>
