@@ -25,9 +25,9 @@ const emit = defineEmits(["relationCardDeleted"]);
 
 const relations = ref([
   {
-    title: "Some dude",
-    description: "omg the description woaaaa",
-    img: "https://images-ext-2.discordapp.net/external/-nZJnhgyniLrhlV1h0Wp6RmCo8r1joceIug-V5CGMac/https/pbs.twimg.com/media/FrPxnYdXsAEsjG9.jpg?width=400&height=400"
+    title: "Name",
+    description: "description",
+    img: "https://cdn.discordapp.com/attachments/455791465734602782/1087278797621039144/Mibot_happy.jpg"
   }
 ]);
 
