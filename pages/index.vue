@@ -174,15 +174,28 @@
           >
             <div class="container px-0">
               <div class="row">
-                <div class="col-lg-8 d-block col-12 pb-4 pb-lg-0" style="height: 670px">
-                <CarouselAll />
-              </div>
+                <div
+                  class="col-lg-8 d-block col-12 pb-4 pb-lg-0"
+                  style="height: 670px"
+                >
+                  <CarouselAll />
+                </div>
                 <div class="col infos">
                   <LikeCard />
                   <LikeCardDislikesCard />
-                  
-                  <RelationsCard v-if="enableRelations"  @relationCardDeleted="enableRelations = false"/>
-                  <button v-else @click="enableRelations = true" type="button" class="btn btn-light mt-4">Add relation card</button>
+
+                  <RelationsCard
+                    v-if="enableRelations"
+                    @relationCardDeleted="enableRelations = false"
+                  />
+                  <button
+                    v-else
+                    @click="enableRelations = true"
+                    type="button"
+                    class="btn btn-light mt-4"
+                  >
+                    Add relation card
+                  </button>
                 </div>
               </div>
             </div>
@@ -256,12 +269,12 @@
 </template>
 
 <script setup>
-const enableRelations = ref(true)
+const enableRelations = ref(true);
 // https://f2.toyhou.se/file/f2-toyhou-se/images/62415424_wRLztgy4rdOGtD9.png
 </script>
 
 <style scoped>
-.content{
+.content {
   margin: 50px 0;
 }
 </style>
