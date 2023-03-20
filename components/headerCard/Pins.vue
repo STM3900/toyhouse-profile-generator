@@ -10,6 +10,7 @@
         alt=""
         width="30px"
         height="30px"
+        :class="{ blink: pin.isBlinking }"
         style="
           filter: contrast(0.9) drop-shadow(0 0 0.1rem black);
           opacity: 0.9;
@@ -33,13 +34,17 @@
           alt=""
         />
         <button
-          @click="showNestedPopup = !showNestedPopup; $refs.inputimg.focus();"
+          @click="
+            showNestedPopup = !showNestedPopup;
+            $refs.inputimg.focus();
+          "
           type="button"
           class="close close-button"
           aria-label="Close"
         >
           <span aria-hidden="true" class="add"
-            ><i class="fas fa-image"></i></span>
+            ><i class="fas fa-image"></i
+          ></span>
         </button>
         <button
           @click="removeItem()"
@@ -87,14 +92,17 @@ const pins = ref([
   {
     img: "https://cdn-icons-png.flaticon.com/512/8259/8259335.png",
     placeholder: false,
+    isBlinking: false,
   },
   {
     img: "https://cdn-icons-png.flaticon.com/512/8259/8259335.png",
     placeholder: true,
+    isBlinking: false,
   },
   {
     img: "https://cdn-icons-png.flaticon.com/512/8259/8259335.png",
     placeholder: true,
+    isBlinking: false,
   },
 ]);
 
@@ -133,17 +141,20 @@ const changePin = (index) => {
 
   showPopup.value = false;
   showNestedPopup.value = false;
+  pins.value[index].isBlinking = false;
 };
 
 const addCustomPin = (index) => {
   pins.value[selectedIndex.value] = {
     img: inputValue.value,
     placeholder: false,
+    isBlinking: false,
   };
 
   showPopup.value = false;
   showNestedPopup.value = false;
-  inputValue.value = ""
+  inputValue.value = "";
+  pins.value[index].isBlinking = false;
 };
 
 const removeItem = () => {
@@ -154,13 +165,18 @@ const removeItem = () => {
 
   showPopup.value = false;
   showNestedPopup.value = false;
+  pins.value[index].isBlinking = false;
 };
 
 const togglePopup = (index) => {
   if (!showPopup.value) {
     selectedIndex.value = index;
+    pins.value[index].isBlinking = true;
   } else {
     selectedIndex.value = null;
+    for (let i = 0; i < pins.value.length; i++) {
+      pins.value[i].isBlinking = false;
+    }
   }
 
   showPopup.value = !showPopup.value;
@@ -285,5 +301,24 @@ const togglePopup = (index) => {
   opacity: 1;
   margin-top: 15px;
   clip-path: polygon(100% 0, 0 0, 0 100%, 100% 100%);
+}
+
+.blink {
+  animation: blink 1s ease infinite;
+}
+
+@keyframes blink {
+  0% {
+    opacity: 0.9;
+    transform: scale(1) rotate(5deg);
+  }
+  50% {
+    opacity: 0.7;
+    transform: scale(0.98) rotate(5deg);
+  }
+  100% {
+    opacity: 0.9;
+    transform: scale(1) rotate(5deg);
+  }
 }
 </style>
