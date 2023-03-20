@@ -49,7 +49,7 @@
       </div>
       <div v-else class="carousel-item h-100 active">
         <img
-          src="https://www.ville-sathonaycamp.fr/wp-content/uploads/2021/06/placeholder-1.png"
+          src="http://tsr-industrie.fr/wp-content/uploads/2016/04/ef3-placeholder-image.jpg"
           class="w-100 h-100"
           alt="..."
           style="object-fit: cover; object-position: center top"
@@ -75,6 +75,30 @@
       <span class="sr-only">Next</span>
     </a>
   </div>
+  <div>
+    <form @submit.prevent="addImg">
+      <div class="input-group my-2">
+        <input
+          v-model="inputValue"
+          type="text"
+          class="form-control"
+          placeholder="direct link of image"
+          aria-label="direct link of image"
+          aria-describedby="add-like"
+        />
+        <div class="input-group-append">
+          <button
+            class="btn btn-outline-secondary"
+            type="submit"
+            id="add-like"
+            :disabled="!inputValue"
+          >
+            <i class="fas fa-plus"></i>
+          </button>
+        </div>
+      </div>
+    </form>
+  </div>
 </template>
 
 <script setup>
@@ -83,15 +107,9 @@ const carouselImgs = ref([
     img: "https://cdn.discordapp.com/attachments/455791465734602782/1087314148490219590/Mibot_parfait_-_Copie.png",
     isActive: true,
   },
-  {
-    img: "https://f2.toyhou.se/file/f2-toyhou-se/images/61709401_7zhrAIhNS6luk2w.jpg",
-    isActive: false,
-  },
-  {
-    img: "https://cdn.discordapp.com/attachments/455791465734602782/1087319821840023592/Eau.png",
-    isActive: false,
-  },
 ]);
+
+const inputValue = ref("");
 
 const removeImg = (index) => {
   const isLast = index == carouselImgs.value.length - 1;
@@ -105,6 +123,16 @@ const removeImg = (index) => {
   } else {
     carouselImgs.value[0].isActive = true;
   }
+};
+
+const addImg = () => {
+  const isActive = carouselImgs.value.length == 0;
+  carouselImgs.value.push({
+    img: inputValue.value,
+    isActive: isActive,
+  });
+
+  inputValue.value = "";
 };
 </script>
 
