@@ -8,7 +8,9 @@
         <!--
                   Character name
                 -->
-        <h2 class="col-4">Mike</h2>
+        <div class="form-group input-group-lg w-50 ml-2">
+          <input type="text" class="form-control" placeholder="Name" aria-label="Name">
+        </div>
         <!--
                   Navbar
                 -->
