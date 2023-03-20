@@ -271,43 +271,9 @@
                   </div>
                 </div>
                 <div class="col infos">
-                  <!--
-                        Likes card
-                      -->
-                  <div
-                    class="card"
-                    style="border-radius: 20px; transform: rotate(2deg)"
-                  >
-                    <h5
-                      class="card-header"
-                      style="
-                        border-top-right-radius: 20px;
-                        border-top-left-radius: 20px;
-                      "
-                    >
-                      <i class="fas fa-heart" style="opacity: 0.5"></i> Likes
-                    </h5>
-                    <div class="card-body px-3 pt-2 pb-3">
-                      <div class="likes">
-                        <ul class="list-group list-group-flush">
-                          <!-- put whathever you want here -->
-                          <li class="list-group-item px-0 py-1">
-                            Cras justo odio
-                          </li>
-                          <li class="list-group-item px-0 py-1">
-                            Dapibus ac facilisis in
-                          </li>
-                          <li class="list-group-item px-0 py-1">
-                            Vestibulum at eros
-                          </li>
-                        </ul>
-                      </div>
-                    </div>
-                  </div>
-                  <!--
-                        Dislikes card
-                      -->
                   <LikeCard />
+                  <LikeCardDislikesCard />
+                  
                   <RelationsCard v-if="enableRelations"  @relationCardDeleted="enableRelations = false"/>
                   <button v-else @click="enableRelations = true" type="button" class="btn btn-light mt-4">Add relation card</button>
                 </div>

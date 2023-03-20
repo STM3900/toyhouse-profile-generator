@@ -4,8 +4,8 @@
       class="card-header"
       style="border-top-right-radius: 20px; border-top-left-radius: 20px"
     >
-      <i class="fas fa-heart" style="opacity: 0.5"></i>
-      Likes
+      <i class="fas fa-heart-broken" style="opacity: 0.5"></i>
+      Dislikes
     </h5>
     <div class="card-body px-3 pt-2 pb-3">
       <div class="dislikes">
@@ -54,7 +54,7 @@
 </template>
 
 <script setup>
-const likeItems = ref(["Thing"]);
+const likeItems = ref(["Other thing"]);
 const inputValue = ref("");
 
 const addItem = () => {
@@ -63,8 +63,8 @@ const addItem = () => {
 };
 
 const removeItem = (index) => {
-  likeItems.value.splice(index, 1)
-}
+  likeItems.value.splice(index, 1);
+};
 </script>
 
 <style scoped></style>
