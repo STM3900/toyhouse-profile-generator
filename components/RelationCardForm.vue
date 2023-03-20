@@ -34,7 +34,9 @@
         >direct link to img is needed!</small
       >
     </div>
-    <button type="submit" class="btn btn-light" :disabled="!checkForm">Add</button>
+    <button type="submit" class="btn btn-light" :disabled="!checkForm">
+      Add
+    </button>
   </form>
 </template>
 
@@ -51,8 +53,8 @@ const emit = defineEmits({
 });
 
 const checkForm = computed(() => {
-  return Object.values(inputs.value).every(input => input.trim() !== "");
-})
+  return Object.values(inputs.value).every((input) => input.trim() !== "");
+});
 
 const inputs = ref({
   img: "",
@@ -62,6 +64,11 @@ const inputs = ref({
 
 const submitForm = () => {
   emit("submited", inputs.value);
+  inputs.value = {
+    img: "",
+    title: "",
+    description: "",
+  };
 };
 </script>
 
