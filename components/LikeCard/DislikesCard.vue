@@ -18,7 +18,7 @@
           <li
             v-for="(item, index) in likeItems"
             class="list-group-item px-0 py-1"
-            :style="{'color': dislikeTextColor}"
+            :style="{'color': dislikeTextColor, 'background': dislikeBackgroundColor}"
           >
             {{ item }}
             <button
