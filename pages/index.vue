@@ -14,6 +14,7 @@
             Main section
           -->
         <div class="tab-content z-bottom" id="nav-tabContent">
+          <SuperColorPicker />
           <div
             class="tab-pane fade active show"
             id="nav-about"
@@ -67,8 +68,8 @@
 </template>
 
 <script setup>
-
 const enableRelations = ref(true);
+
 // https://f2.toyhou.se/file/f2-toyhou-se/images/62415424_wRLztgy4rdOGtD9.png
 </script>
 
