@@ -12,7 +12,7 @@
     "
   >
     <div class="card-body">
-      <SuperColorPicker icon="circle" button-color="light" />
+      <SuperColorPicker icon="chess-board" button-color="light" />
       <div class="input-group">
         <textarea
           class="form-control"
@@ -20,7 +20,7 @@
           placeholder="Write your story here c:"
           style="min-height: 350px;"
         ></textarea>
-        <SuperColorPicker icon="circle" button-color="light" />
+        <SuperColorPicker icon="font" button-color="light" />
       </div>
     </div>
   </div>

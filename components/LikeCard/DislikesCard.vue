@@ -6,11 +6,11 @@
     >
       <i class="fas fa-heart-broken" style="opacity: 0.5"></i>
       Dislikes
-      <SuperColorPicker icon="circle" button-color="light" />
-      <SuperColorPicker icon="circle" button-color="light" />
+      <SuperColorPicker icon="newspaper" button-color="light" />
+      <SuperColorPicker icon="font" button-color="light" />
     </h5>
     <div class="card-body px-3 pt-2 pb-3">
-      <SuperColorPicker icon="circle" button-color="light" />
+      <SuperColorPicker icon="chess-board" button-color="light" />
       <div class="dislikes">
         <ul class="list-group list-group-flush">
           <!-- put whathever you want here -->

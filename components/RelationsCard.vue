@@ -9,8 +9,8 @@
     >
       <i class="fas fa-user-friends" style="opacity: 0.5"></i>
       Relations
-      <SuperColorPicker icon="circle" button-color="light" />
-      <SuperColorPicker icon="circle" button-color="light" />
+      <SuperColorPicker icon="newspaper" button-color="light" />
+      <SuperColorPicker icon="font" button-color="light" />
       <button
         @click="$emit('relationCardDeleted')"
         type="button"
@@ -21,7 +21,7 @@
       </button>
     </h5>
     <div class="card-body py-20">
-      <SuperColorPicker icon="circle" button-color="light" />
+      <SuperColorPicker icon="chess-board" button-color="light" />
       <RelationCard
         v-for="(relation, index) in relations"
         :relationInfo="relation"

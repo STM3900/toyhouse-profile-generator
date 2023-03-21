@@ -34,7 +34,7 @@ const props = defineProps({
 
 const emit = defineEmits(["colorChanged"]);
 
-const colorOk = ref("#59c7f9");
+const colorOk = ref("#AFAFAF");
 const showPopup = ref(false);
 
 const togglePopup = () => {
@@ -53,8 +53,6 @@ const changeColor = (color) => {
 
 <style>
 /* DANGER : NOT SCOPED */
-.button-color-popup {
-}
 .content-box {
   width: 220px !important;
 }
