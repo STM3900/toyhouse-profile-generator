@@ -1,7 +1,11 @@
 <template>
   <ClientOnly>
     <div>
-      <button @click="showPopup = !showPopup" type="button button-color-popup" class="btn btn-light">
+      <button
+        @click="showPopup = !showPopup"
+        type="button button-color-popup"
+        class="btn btn-light"
+      >
         <i :class="`fas fa-${icon}`" :style="{ color: colorOk }"></i>
       </button>
       <ColorPicker
@@ -19,9 +23,11 @@
 const props = defineProps({
   icon: {
     type: String,
-    default: "circle"
-  }
-})
+    default: "circle",
+  },
+});
+
+const emit = defineEmits(["colorChanged"]);
 
 const colorOk = ref("#59c7f9");
 const showPopup = ref(false);
@@ -32,6 +38,7 @@ const changeColor = (color) => {
   color.value = `rgba(${r}, ${g}, ${b}, ${a})`;
   */
   colorOk.value = color.hex;
+  emit("colorChanged", color.hex);
 };
 </script>
 
@@ -53,7 +60,6 @@ const changeColor = (color) => {
   transition: 0.3s;
   clip-path: polygon(0 0, 0 0, 0 0, 0 0);
 }
-
 
 .color-popup-show {
   transition: 0.3s;
