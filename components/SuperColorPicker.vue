@@ -2,7 +2,7 @@
   <ClientOnly>
     <div>
       <button @click="showPopup = !showPopup" type="button button-color-popup" class="btn btn-light">
-        <i class="fas fa-circle" :style="{ color: colorOk }"></i>
+        <i :class="`fas fa-${icon}`" :style="{ color: colorOk }"></i>
       </button>
       <ColorPicker
         class="content-box color-picker"
@@ -16,6 +16,13 @@
 </template>
 
 <script setup>
+const props = defineProps({
+  icon: {
+    type: String,
+    default: "circle"
+  }
+})
+
 const colorOk = ref("#59c7f9");
 const showPopup = ref(false);
 

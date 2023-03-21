@@ -14,7 +14,7 @@
             Main section
           -->
         <div class="tab-content z-bottom" id="nav-tabContent">
-          <SuperColorPicker />
+          <SuperColorPicker icon="circle" />
           <div
             class="tab-pane fade active show"
             id="nav-about"
