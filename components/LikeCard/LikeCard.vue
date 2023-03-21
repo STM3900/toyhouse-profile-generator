@@ -6,8 +6,11 @@
     >
       <i class="fas fa-heart" style="opacity: 0.5"></i>
       Likes
+      <SuperColorPicker icon="circle" button-color="light" />
+      <SuperColorPicker icon="circle" button-color="light" />
     </h5>
     <div class="card-body px-3 pt-2 pb-3">
+      <SuperColorPicker icon="circle" button-color="light" />
       <div class="dislikes">
         <ul class="list-group list-group-flush">
           <!-- put whathever you want here -->
@@ -24,6 +27,7 @@
             >
               <span aria-hidden="true">&times;</span>
             </button>
+            <SuperColorPicker icon="circle" button-color="light" />
           </li>
         </ul>
       </div>
@@ -63,8 +67,8 @@ const addItem = () => {
 };
 
 const removeItem = (index) => {
-  likeItems.value.splice(index, 1)
-}
+  likeItems.value.splice(index, 1);
+};
 </script>
 
 <style scoped></style>
