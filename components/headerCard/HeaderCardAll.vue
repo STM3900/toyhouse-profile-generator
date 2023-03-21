@@ -4,6 +4,7 @@
       class="card-header container"
       style="border-top-left-radius: 20px; border-top-right-radius: 20px"
     >
+    <SuperColorPicker icon="circle" button-color="light" />
       <div class="row">
         <!--
                   Character name
@@ -35,7 +36,7 @@
               role="tab"
               aria-controls="nav-about"
               aria-selected="false"
-              >About</a
+              >About <SuperColorPicker icon="circle" button-color="light" /></a
             >
           </li>
 
@@ -48,7 +49,7 @@
               role="tab"
               aria-controls="nav-story"
               aria-selected="true"
-              >Story</a
+              >Story <SuperColorPicker icon="circle" button-color="light" /></a
             >
           </li>
         </ul>
@@ -89,6 +90,8 @@
                     <span aria-hidden="true">&times;</span>
                   </button>
                 </div>
+                <SuperColorPicker icon="circle" button-color="light" />
+                <SuperColorPicker icon="circle" button-color="light" />
                 <form @submit.prevent="addTag">
                   <div class="input-group my-2">
                     <input
@@ -123,6 +126,7 @@
                 aria-label="description"
                 placeholder="Write your description here!"
               ></textarea>
+              <SuperColorPicker icon="circle" button-color="light" />
             </div>
             <p></p>
           </div>

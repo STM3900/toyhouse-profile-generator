@@ -35,7 +35,7 @@ const props = defineProps({
 const emit = defineEmits(["colorChanged"]);
 
 const colorOk = ref("#59c7f9");
-const showPopup = ref(true);
+const showPopup = ref(false);
 
 const togglePopup = () => {
   showPopup.value = !showPopup.value
