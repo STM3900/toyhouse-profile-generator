@@ -31,10 +31,11 @@
           class="fas fa-circle"
           @click="togglePopup(index)"
           :class="{ 'blink-placeholder': pin.isBlinking }"
-          style="font-size: 32px; transform: translateY(8px); color: #f0f0f0; cursor: pointer;"
+          style="font-size: 32px; transform: translateY(8px); cursor: pointer;"
+          :style="{'color': pinPlaceholderColor}"
         ></i>
       </div>
-      <SuperColorPicker icon="palette" button-color="secondary" base-color="#f0f0f0" />
+      <SuperColorPicker icon="palette" button-color="secondary" base-color="#f0f0f0" @color-changed="changePlaceholderColor" />
       <aside
         class="tooltip-custom"
         :class="{ 'tooltip-custom-show': showPopup }"
@@ -195,6 +196,13 @@ const togglePopup = (index) => {
 
   showPopup.value = !showPopup.value;
 };
+
+/* dynamic color changing */
+const pinPlaceholderColor = ref("#f0f0f0")
+
+const changePlaceholderColor = (color) => {
+  pinPlaceholderColor.value = color
+}
 </script>
 
 <style scoped>
