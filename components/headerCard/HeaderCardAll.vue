@@ -8,8 +8,16 @@
         <!--
                   Character name
                 -->
-        <div class="form-group input-group-lg w-50 ml-2">
-          <input type="text" class="form-control" placeholder="Name" aria-label="Name">
+        <div class="input-group input-group-lg w-50 ml-2">
+          <input
+            type="text"
+            class="form-control"
+            placeholder="Name"
+            aria-label="Name"
+          />
+          <div class="input-group-append">
+            <SuperColorPicker icon="circle" button-color="light" />
+          </div>
         </div>
         <!--
                   Navbar
@@ -135,7 +143,7 @@ const addTag = () => {
 
 const removeTag = (index) => {
   tags.value.splice(index, 1);
-}
+};
 </script>
 
 <style scoped>
