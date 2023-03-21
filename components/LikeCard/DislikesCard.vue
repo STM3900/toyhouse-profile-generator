@@ -3,20 +3,22 @@
     <h5
       class="card-header"
       style="border-top-right-radius: 20px; border-top-left-radius: 20px"
+      :style="{'color' : dislikeTitleColor, 'background' : dislikeHeaderColor}"
     >
       <i class="fas fa-heart-broken" style="opacity: 0.5"></i>
       Dislikes
-      <SuperColorPicker icon="newspaper" button-color="secondary" base-color="#f7f7f7" />
-      <SuperColorPicker icon="font" button-color="light" base-color="#000000" />
+      <SuperColorPicker icon="newspaper" button-color="secondary" base-color="#f7f7f7" @color-changed="changeDislikeHeaderColor" />
+      <SuperColorPicker icon="font" button-color="light" base-color="#000000" @color-changed="changeDislikeTitleColor" />
     </h5>
-    <div class="card-body px-3 pt-2 pb-3">
-      <SuperColorPicker icon="chess-board" button-color="secondary" base-color="#ffffff" />
+    <div class="card-body px-3 pt-2 pb-3" :style="{'background': dislikeBackgroundColor}" style="border-bottom-right-radius: 20px; border-bottom-left-radius: 20px;">
+      <SuperColorPicker icon="chess-board" button-color="secondary" base-color="#ffffff" @color-changed="changeDislikeBackgroundColor" />
       <div class="dislikes">
         <ul class="list-group list-group-flush">
           <!-- put whathever you want here -->
           <li
             v-for="(item, index) in likeItems"
             class="list-group-item px-0 py-1"
+            :style="{'color': dislikeTextColor}"
           >
             {{ item }}
             <button
@@ -27,7 +29,6 @@
             >
               <span aria-hidden="true">&times;</span>
             </button>
-            <SuperColorPicker icon="circle" button-color="light" />
           </li>
         </ul>
       </div>
@@ -53,6 +54,7 @@
           </div>
         </div>
       </form>
+      <SuperColorPicker icon="font" button-color="light" base-color="#000000" @color-changed="changeDislikeTextColor" />
     </div>
   </div>
 </template>
@@ -69,6 +71,28 @@ const addItem = () => {
 const removeItem = (index) => {
   likeItems.value.splice(index, 1);
 };
+
+/* dynamic color changing */
+const dislikeHeaderColor = ref("#f7f7f7")
+const dislikeTitleColor = ref("#000000")
+const dislikeBackgroundColor = ref("#ffffff")
+const dislikeTextColor = ref("#000000")
+
+const changeDislikeHeaderColor = (color) => {
+  dislikeHeaderColor.value = color
+}
+
+const changeDislikeTitleColor = (color) => {
+  dislikeTitleColor.value = color
+}
+
+const changeDislikeBackgroundColor = (color) => {
+  dislikeBackgroundColor.value = color
+}
+
+const changeDislikeTextColor = (color) => {
+  dislikeTextColor.value = color
+}
 </script>
 
 <style scoped></style>
