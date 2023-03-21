@@ -10,7 +10,7 @@
         <!--
             INTRO CARD
           -->
-        <HeaderCardAll class="z-top" />
+        <HeaderCardAll class="z-top" style="z-index: 10;" />
         <!--
             Main section
           -->
@@ -30,8 +30,8 @@
                   <CarouselAll />
                 </div>
                 <div class="col infos">
-                  <LikeCard />
-                  <LikeCardDislikesCard />
+                  <LikeCard style="z-index: 9;"  />
+                  <LikeCardDislikesCard style="z-index: 8;"  />
 
                   <RelationsCard
                     v-if="enableRelations"
@@ -76,13 +76,5 @@ const enableRelations = ref(true);
 <style scoped>
 .content {
   margin: 50px 0;
-}
-
-.z-top {
-  z-index: 10;
-}
-
-.z-bottom {
-  z-index: 1;
 }
 </style>
