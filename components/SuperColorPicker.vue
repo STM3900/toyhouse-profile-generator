@@ -5,6 +5,8 @@
       class="btn button-color-popup"
       type="button"
       :class="`btn btn-${buttonColor}`"
+      @focusout="showPopup = false"
+      tabindex="0"
     >
       <i :class="`fas fa-${icon}`" :style="{ color: colorIcon }"></i>
       <ColorPicker
