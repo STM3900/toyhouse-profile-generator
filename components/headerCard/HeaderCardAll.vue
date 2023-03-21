@@ -4,8 +4,8 @@
       class="card-header container"
       style="border-top-left-radius: 20px; border-top-right-radius: 20px"
     >
-    <SuperColorPicker icon="newspaper" button-color="light" />
-      <div class="row">
+    <SuperColorPicker icon="newspaper" button-color="secondary" base-color="#f7f7f7" />
+      <div class="row mt-1">
         <!--
                   Character name
                 -->
@@ -17,7 +17,7 @@
             aria-label="Name"
           />
           <div class="input-group-append">
-            <SuperColorPicker icon="font" button-color="light" />
+            <SuperColorPicker icon="font" button-color="light" base-color="#000000" />
           </div>
         </div>
         <!--
@@ -36,7 +36,7 @@
               role="tab"
               aria-controls="nav-about"
               aria-selected="false"
-              >About <SuperColorPicker icon="font" button-color="light" /></a
+              >About <SuperColorPicker icon="font" button-color="light" base-color="#000000" /></a
             >
           </li>
 
@@ -49,7 +49,7 @@
               role="tab"
               aria-controls="nav-story"
               aria-selected="true"
-              >Story <SuperColorPicker icon="font" button-color="light" /></a
+              >Story <SuperColorPicker icon="font" button-color="light" base-color="#007bff" /></a
             >
           </li>
         </ul>
@@ -60,7 +60,7 @@
             -->
     <div class="card-body">
       <div class="container">
-        <SuperColorPicker icon="chess-board" button-color="light" />
+        <SuperColorPicker icon="chess-board" button-color="secondary" base-color="#ffffff" />
         <div class="row py-4">
           <div
             class="traits col-12 pl-3 col-lg-3 d-flex justify-content-start justify-content-lg-center"
@@ -91,8 +91,8 @@
                     <span aria-hidden="true">&times;</span>
                   </button>
                 </div>
-                <SuperColorPicker icon="chess-board" button-color="light" />
-                <SuperColorPicker icon="font" button-color="light" />
+                <SuperColorPicker icon="chess-board" button-color="secondary" base-color="#ffffff" />
+                <SuperColorPicker icon="font" button-color="light" base-color="#000000" />
                 <form @submit.prevent="addTag">
                   <div class="input-group my-2">
                     <input
@@ -127,7 +127,7 @@
                 aria-label="description"
                 placeholder="Write your description here!"
               ></textarea>
-              <SuperColorPicker icon="font" button-color="light" />
+              <SuperColorPicker icon="font" button-color="light" base-color="#000000" />
             </div>
             <p></p>
           </div>

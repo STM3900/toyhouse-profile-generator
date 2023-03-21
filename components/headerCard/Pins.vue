@@ -34,7 +34,7 @@
           style="font-size: 32px; transform: translateY(8px); color: #f0f0f0; cursor: pointer;"
         ></i>
       </div>
-      <SuperColorPicker icon="palette" button-color="light" />
+      <SuperColorPicker icon="palette" button-color="secondary" base-color="#f0f0f0" />
       <aside
         class="tooltip-custom"
         :class="{ 'tooltip-custom-show': showPopup }"

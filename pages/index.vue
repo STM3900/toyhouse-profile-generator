@@ -6,7 +6,7 @@
       -->
     <div class="d-flex justify-content-center">
       <div style="max-width: 1000px">
-        <SuperColorPicker icon="chess-board" button-color="light" />
+        <SuperColorPicker icon="chess-board" button-color="secondary" base-color="#ffffff" />
         <!--
             INTRO CARD
           -->

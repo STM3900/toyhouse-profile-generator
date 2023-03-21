@@ -6,13 +6,13 @@
       type="button"
       :class="`btn btn-${buttonColor}`"
     >
-      <i :class="`fas fa-${icon}`" :style="{ color: colorOk }"></i>
+      <i :class="`fas fa-${icon}`" :style="{ color: colorIcon }"></i>
       <ColorPicker
         @click="togglePopup"
         class="content-box color-picker"
         :class="{ 'color-popup-show': showPopup }"
         theme="light"
-        :color="colorOk"
+        :color="baseColor"
         @changeColor="changeColor"
         :colors-default="[]"
       />
@@ -30,12 +30,19 @@ const props = defineProps({
     type: String,
     default: "light",
   },
+  baseColor: {
+    type: String,
+    default: "#AFAFAF",
+  }
 });
 
 const emit = defineEmits(["colorChanged"]);
-
-const colorOk = ref("#AFAFAF");
 const showPopup = ref(false);
+const colorIcon = ref("");
+
+onMounted(() => {
+  colorIcon.value = props.baseColor
+})
 
 const togglePopup = () => {
   showPopup.value = !showPopup.value
@@ -46,7 +53,7 @@ const changeColor = (color) => {
   const { r, g, b, a } = color.rgba;
   color.value = `rgba(${r}, ${g}, ${b}, ${a})`;
   */
-  colorOk.value = color.hex;
+  colorIcon.value = color.hex;
   emit("colorChanged", color.hex);
 };
 </script>
