@@ -6,11 +6,12 @@
     <h5
       class="card-header"
       style="border-top-right-radius: 20px; border-top-left-radius: 20px"
+      :style="{'color': relationCardTitleColor, 'background': relationCardHeaderColor}"
     >
       <i class="fas fa-user-friends" style="opacity: 0.5"></i>
       Relations
-      <SuperColorPicker icon="newspaper" button-color="secondary" base-color="#f7f7f7" />
-      <SuperColorPicker icon="font" button-color="light" base-color="#000000" />
+      <SuperColorPicker icon="newspaper" button-color="secondary" base-color="#f7f7f7" @color-changed="changeRelationCardHeaderColor" />
+      <SuperColorPicker icon="font" button-color="light" base-color="#000000" @color-changed="changeRelationCardTitleColor" />
       <button
         @click="$emit('relationCardDeleted')"
         type="button"
@@ -20,8 +21,8 @@
         <span aria-hidden="true">&times;</span>
       </button>
     </h5>
-    <div class="card-body py-20">
-      <SuperColorPicker icon="chess-board" button-color="secondary" base-color="#ffffff" />
+    <div class="card-body py-20" :style="{'background': relationCardBackgroundColor}" style="border-bottom-right-radius: 20px; border-bottom-left-radius: 20px;">
+      <SuperColorPicker icon="chess-board" button-color="secondary" base-color="#ffffff" @color-changed="changeRelationCardBackgroundColor"/>
       <RelationCard
         v-for="(relation, index) in relations"
         :relationInfo="relation"
@@ -54,6 +55,23 @@ const addRelation = (relation) => {
 const deleteRelation = (index) => {
   relations.value.splice(index, 1);
 };
+
+/* dynamic color changing */
+const relationCardTitleColor = ref("#000000")
+const relationCardHeaderColor = ref("#f7f7f7")
+const relationCardBackgroundColor = ref("#ffffff")
+
+const changeRelationCardTitleColor = (color) => {
+  relationCardTitleColor.value = color
+}
+
+const changeRelationCardHeaderColor = (color) => {
+  relationCardHeaderColor.value = color
+}
+
+const changeRelationCardBackgroundColor = (color) => {
+  relationCardBackgroundColor.value = color
+}
 </script>
 
 <style scoped></style>

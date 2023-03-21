@@ -20,6 +20,7 @@
 const { relationInfo } = defineProps(['relationInfo'])
 const emit = defineEmits(['deleted'])
 
+/* dynamic color changing */
 const relationInfoTitleColor = ref("#000000")
 const relationInfoDescriptionColor = ref("#000000")
 
