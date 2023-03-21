@@ -1,90 +1,103 @@
 <template>
-  <div class="my-2 pins-section">
-    <!--
+  <ClientOnly>
+    <div class="my-2 pins-section">
+      <!--
                           oriantation (put direct link on img)
                         -->
-    <!-- VALID FLAG IMG  -->
-    <div v-for="(pin, index) in pins" class="d-inline mr-1">
-      <img
-        :src="pin.img"
-        alt=""
-        width="30px"
-        height="30px"
-        :class="{ blink: pin.isBlinking }"
-        style="
-          filter: contrast(0.9) drop-shadow(0 0 0.1rem black);
-          opacity: 0.9;
-          transform: rotate(5deg);
-          border-radius: 50%;
-        "
-        :style="
-          !pin.placeholder
-            ? 'filter: contrast(0.9) drop-shadow(0 0 0.1rem black); opacity: 0.9; transform: rotate(5deg);'
-            : 'filter: contrast(0) drop-shadow(0 0 0.1rem black); opacity: 0.2; transform: rotate(-5deg);'
-        "
-        @click="togglePopup(index)"
-      />
-    </div>
-    <aside class="tooltip-custom" :class="{ 'tooltip-custom-show': showPopup }">
-      <div>
+      <!-- VALID FLAG IMG  -->
+      <div v-for="(pin, index) in pins" class="d-inline mr-1">
         <img
-          v-for="(pinImg, index) in pinsImg"
-          @click="changePin(index)"
-          :src="pinImg"
+          v-if="!pin.placeholder"
+          :src="pin.img"
           alt=""
-        />
-        <button
-          @click="
-            showNestedPopup = !showNestedPopup;
-            $refs.inputimg.focus();
+          :class="{ blink: pin.isBlinking }"
+          style="
+            filter: contrast(0.9) drop-shadow(0 0 0.1rem black);
+            opacity: 0.9;
+            transform: rotate(5deg);
+            border-radius: 50%;
+            width: 30px;
+            height: 30px;
           "
-          type="button"
-          class="close close-button"
-          aria-label="Close"
-        >
-          <span aria-hidden="true" class="add"
-            ><i class="fas fa-image"></i
-          ></span>
-        </button>
-        <button
-          @click="removeItem()"
-          type="button"
-          class="close close-button"
-          aria-label="Close"
-        >
-          <span aria-hidden="true">&times;</span>
-        </button>
+          :style="
+            !pin.placeholder
+              ? 'filter: contrast(0.9) drop-shadow(0 0 0.1rem black); opacity: 0.9; transform: rotate(5deg);'
+              : 'filter: contrast(0) drop-shadow(0 0 0.1rem black); opacity: 0.2; transform: rotate(-5deg);'
+          "
+          @click="togglePopup(index)"
+        />
+        <i
+          v-else
+          class="fas fa-circle"
+          @click="togglePopup(index)"
+          :class="{ 'blink-placeholder': pin.isBlinking }"
+          style="font-size: 32px; transform: translateY(8px); color: #f0f0f0; cursor: pointer;"
+        ></i>
       </div>
-    </aside>
-    <aside
-      :class="{ 'tooltip-nested-show': showNestedPopup }"
-      class="tooltip-nested"
-    >
-      <form @submit.prevent="addCustomPin(index)">
-        <div class="input-group my-2">
-          <input
-            v-model="inputValue"
-            type="text"
-            class="form-control"
-            placeholder="link of image"
-            aria-label="link of image"
-            aria-describedby="add-pin"
-            ref="inputimg"
+      <aside
+        class="tooltip-custom"
+        :class="{ 'tooltip-custom-show': showPopup }"
+      >
+        <div>
+          <img
+            v-for="(pinImg, index) in pinsImg"
+            @click="changePin(index)"
+            :src="pinImg"
+            alt=""
           />
-          <div class="input-group-append">
-            <button
-              class="btn btn-outline-secondary"
-              type="submit"
-              id="add-pin"
-              :disabled="!inputValue"
-            >
-              <i class="fas fa-plus"></i>
-            </button>
-          </div>
+          <button
+            @click="
+              showNestedPopup = !showNestedPopup;
+              $refs.inputimg.focus();
+            "
+            type="button"
+            class="close close-button"
+            aria-label="Close"
+          >
+            <span aria-hidden="true" class="add"
+              ><i class="fas fa-image"></i
+            ></span>
+          </button>
+          <button
+            @click="removeItem()"
+            type="button"
+            class="close close-button"
+            aria-label="Close"
+          >
+            <span aria-hidden="true">&times;</span>
+          </button>
         </div>
-      </form>
-    </aside>
-  </div>
+      </aside>
+      <aside
+        :class="{ 'tooltip-nested-show': showNestedPopup }"
+        class="tooltip-nested"
+      >
+        <form @submit.prevent="addCustomPin(index)">
+          <div class="input-group my-2">
+            <input
+              v-model="inputValue"
+              type="text"
+              class="form-control"
+              placeholder="link of image"
+              aria-label="link of image"
+              aria-describedby="add-pin"
+              ref="inputimg"
+            />
+            <div class="input-group-append">
+              <button
+                class="btn btn-outline-secondary"
+                type="submit"
+                id="add-pin"
+                :disabled="!inputValue"
+              >
+                <i class="fas fa-plus"></i>
+              </button>
+            </div>
+          </div>
+        </form>
+      </aside>
+    </div>
+  </ClientOnly>
 </template>
 
 <script setup>
@@ -307,6 +320,10 @@ const togglePopup = (index) => {
   animation: blink 1s ease infinite;
 }
 
+.blink-placeholder {
+  animation: placeholderblink 1s ease infinite;
+}
+
 @keyframes blink {
   0% {
     opacity: 0.9;
@@ -319,6 +336,21 @@ const togglePopup = (index) => {
   100% {
     opacity: 0.9;
     transform: scale(1) rotate(5deg);
+  }
+}
+
+@keyframes placeholderblink {
+  0% {
+    opacity: 1;
+    transform: scale(1) translateY(8px);
+  }
+  50% {
+    opacity: 0.5;
+    transform: scale(0.98) translateY(8px);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translateY(8px);
   }
 }
 </style>
