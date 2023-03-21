@@ -60,6 +60,7 @@
             -->
     <div class="card-body">
       <div class="container">
+        <SuperColorPicker icon="circle" button-color="light" />
         <div class="row py-4">
           <div
             class="traits col-12 pl-3 col-lg-3 d-flex justify-content-start justify-content-lg-center"
