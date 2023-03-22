@@ -10,7 +10,7 @@
               <!--
                   Character name
                 -->
-              <div class="input-group input-group-lg w-50 ml-2 to-exclude">
+              <div class="input-group input-group-lg w-50 ml-2 to-exclude col">
                 <input
                   type="text"
                   class="form-control"
@@ -25,38 +25,46 @@
               <!--
                   Navbar
                 -->
-              <ul
-                class="nav nav-tabs card-header-tabs col"
-                style="justify-content: flex-end; align-self: flex-end"
-              >
-                <li class="nav-item">
-                  <a
-                    class="nav-item nav-link active"
-                    id="nav-about-tab"
+              <div class="nav col" style="justify-content: flex-end; align-items: center; align-content: center; gap: 10px;">
+                <a                  
                     data-toggle="tab"
                     href="#nav-about"
                     role="tab"
                     aria-controls="nav-about"
-                    aria-selected="false"
-                    :style="{ 'color': mainAboutColor }"
-                    >About <SuperColorPicker icon="font" button-color="light" base-color="#000000" @color-changed="changeAboutColor" class="to-exclude" /></a
-                  >
-                </li>
-
-                <li class="nav-item">
-                  <a
-                    class="nav-item nav-link"
-                    id="nav-story-tab"
-                    data-toggle="tab"
+                    :style="{ 'color': mainAboutColor, 'background': mainAboutBackgroundColor }"
+                    style="  
+                      cursor: pointer;
+                      font-weight: 400;
+                      text-align: center;
+                      vertical-align: middle;
+                      padding: 7px 15px;
+                      line-height: 1.5;
+                      border-radius: 10px;
+                      user-select: none;
+                      "
+                    >
+                    About <SuperColorPicker icon="chess-board" button-color="dark" base-color="#ffffff" @color-changed="changeAboutBackgroundColor" class="to-exclude" /> <SuperColorPicker icon="font" button-color="light" base-color="#000000" @color-changed="changeAboutColor" class="to-exclude" />
+                  </a> 
+                <a  
+                    data-toggle="tab"     
                     href="#nav-story"
                     role="tab"
-                    aria-controls="nav-story"
-                    aria-selected="true"
-                    :style="{ 'color': mainStoryColor }"
-                    >Story <SuperColorPicker icon="font" button-color="light" base-color="#007bff" @color-changed="changeStoryColor" class="to-exclude" /></a
-                  >
-                </li>
-              </ul>
+                    aria-controls="nav-secondary"
+                    class=""
+                    :style="{ 'color': mainStoryColor, 'background': mainStoryBackgroundColor }"
+                    style="
+                      cursor: pointer;
+                      font-weight: 400;
+                      text-align: center;
+                      vertical-align: middle;
+                      padding: 7px 15px;
+                      line-height: 1.5;
+                      border-radius: 10px;
+                      user-select: none;"
+                    >
+                    Story <SuperColorPicker icon="chess-board" button-color="dark" base-color="#ffffff" @color-changed="changeStoryBackgroundColor" class="to-exclude" /> <SuperColorPicker icon="font" button-color="light" base-color="#000000" @color-changed="changeStoryColor" class="to-exclude" />
+                  </a> 
+              </div>
             </div>
           </div>
           <!--
@@ -157,14 +165,19 @@ const removeTag = (index) => {
 };
 
 /* dynamic color changing */
-const mainHeaderColor = ref()
-const mainTitleColor = ref()
-const mainAboutColor = ref()
-const mainStoryColor = ref()
-const mainBackgroundColor = ref()
-const mainTagBgColor = ref()
-const mainTagTextColor = ref()
-const mainDescriptionColor = ref()
+const mainHeaderColor = ref("#f7f7f7")
+const mainTitleColor = ref("#000000")
+
+const mainAboutColor = ref("#000000")
+const mainStoryColor = ref("#000000")
+
+const mainAboutBackgroundColor = ref("#ffffff")
+const mainStoryBackgroundColor = ref("#ffffff")
+
+const mainBackgroundColor = ref("#ffffff")
+const mainTagBgColor = ref("#ffffff")
+const mainTagTextColor = ref("#000000")
+const mainDescriptionColor = ref("#000000")
 
 const changeHeaderColor = (color) => {
   mainHeaderColor.value = color
@@ -196,6 +209,14 @@ const changeTagTextColor = (color) => {
 
 const changeDescriptionColor = (color) => {
   mainDescriptionColor.value = color
+}
+
+const changeAboutBackgroundColor = (color) => {
+  mainAboutBackgroundColor.value = color
+}
+
+const changeStoryBackgroundColor = (color) => {
+  mainStoryBackgroundColor.value = color;
 }
 
 

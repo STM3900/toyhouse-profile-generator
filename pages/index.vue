@@ -10,11 +10,11 @@
           <!--
             INTRO CARD
           -->
-          <HeaderCardAll class="z-top" style="z-index: 10;" />
+          <HeaderCardAll style="z-index: 10;" />
           <!--
             Main section
           -->
-          <div class="tab-content z-bottom" id="nav-tabContent">
+          <div class="tab-content" id="nav-tabContent">
             <div
               class="tab-pane fade active show"
               id="nav-about"
