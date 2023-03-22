@@ -1,12 +1,12 @@
 <template>
-  <div class="content">
+  <div class="content" :style="{'background': mainBackgroundColor}">
     <!--
         Code by Théo (STM3900)
         DONT USE IN WYSIWYG PLS AAAAAAAAA
       -->
     <div class="d-flex justify-content-center">
       <div style="max-width: 1000px">
-        <SuperColorPicker icon="chess-board" button-color="secondary" base-color="#ffffff" />
+        <SuperColorPicker icon="chess-board" button-color="secondary" base-color="#ffffff" @color-changed="changeBackgroundColor" />
         <!--
             INTRO CARD
           -->
@@ -70,11 +70,16 @@
 <script setup>
 const enableRelations = ref(true);
 
-// https://f2.toyhou.se/file/f2-toyhou-se/images/62415424_wRLztgy4rdOGtD9.png
+/* dynamic color changing */
+const mainBackgroundColor = ref("#ffffff")
+
+const changeBackgroundColor = (color) => {
+  mainBackgroundColor.value = color
+}
 </script>
 
 <style scoped>
 .content {
-  margin: 50px 0;
+  padding: 50px 0 100px 0;
 }
 </style>
