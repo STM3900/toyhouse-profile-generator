@@ -5,8 +5,7 @@
       class="btn button-color-popup to-exclude"
       type="button"
       :class="`btn btn-${buttonColor}`"
-      @focusout="showPopup = false"
-      tabindex="0"
+      v-click-outside="closePopup"
     >
       <i :class="`fas fa-${icon}`" :style="{ color: colorIcon }"></i>
       <ColorPicker
@@ -51,6 +50,10 @@ onMounted(() => {
 
 const togglePopup = () => {
   showPopup.value = !showPopup.value
+}
+
+const closePopup = () => {
+  showPopup.value = false
 }
 
 const RGBAToHexA = (rgba, forceRemoveAlpha = false) => {
@@ -125,5 +128,7 @@ const changeColor = (color) => {
   border-bottom-right-radius: 10px !important;
 }
 
-
+.color-picker .color-type:not(.color-show + .color-type) {
+  display: none;
+}
 </style>

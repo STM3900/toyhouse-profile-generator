@@ -11,6 +11,7 @@
     "nuxt": "^3.3.1"
   },
   "dependencies": {
+    "click-outside-vue3": "^4.0.1",
     "lightvue": "^1.5.1",
     "vue-color-kit": "^1.0.5"
   }
