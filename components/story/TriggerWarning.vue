@@ -47,7 +47,7 @@
 </template>
 
 <script setup>
-const enableTW = ref(true);
+const enableTW = ref(false);
 
 /* Input */
 const twInputValue = ref("")

@@ -15,7 +15,7 @@
       <button
         @click="$emit('relationCardDeleted')"
         type="button to-exclude"
-        class="close"
+        class="close to-exclude"
         aria-label="Close"
       >
         <span aria-hidden="true">&times;</span>

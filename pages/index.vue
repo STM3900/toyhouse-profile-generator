@@ -41,6 +41,7 @@
           <div class="tab-pane fade" id="nav-story" role="tabpanel" aria-labelledby="nav-story-tab">
             <StoryTriggerWarning />
             <StoryCard />
+            <button @click="exportHTML" type="button" class="btn btn-info to-exclude mt-3">Render HTML</button>
           </div>
         </div>
       </div>
