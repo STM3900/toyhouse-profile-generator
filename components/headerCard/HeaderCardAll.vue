@@ -3,131 +3,137 @@
     <div
       class="card-header container"
       style="border-top-left-radius: 20px; border-top-right-radius: 20px"
-    >
-    <SuperColorPicker icon="newspaper" button-color="secondary" base-color="#f7f7f7" />
-      <div class="row mt-1">
-        <!--
+          :style="{ 'background': mainHeaderColor }"
+          >
+          <SuperColorPicker icon="newspaper" button-color="secondary" base-color="#f7f7f7" @color-changed="changeHeaderColor" />
+            <div class="row mt-1">
+              <!--
                   Character name
                 -->
-        <div class="input-group input-group-lg w-50 ml-2">
-          <input
-            type="text"
-            class="form-control"
-            placeholder="Name"
-            aria-label="Name"
-          />
-          <div class="input-group-append">
-            <SuperColorPicker icon="font" button-color="light" base-color="#000000" />
-          </div>
-        </div>
-        <!--
+              <div class="input-group input-group-lg w-50 ml-2">
+                <input
+                  type="text"
+                  class="form-control"
+                  placeholder="Name"
+                  aria-label="Name"
+                  :style="{ 'color': mainTitleColor }"
+                />
+                <div class="input-group-append">
+                  <SuperColorPicker icon="font" button-color="light" base-color="#000000" @color-changed="changeTitleColor" />
+                </div>
+              </div>
+              <!--
                   Navbar
                 -->
-        <ul
-          class="nav nav-tabs card-header-tabs col"
-          style="justify-content: flex-end; align-self: flex-end"
-        >
-          <li class="nav-item">
-            <a
-              class="nav-item nav-link active"
-              id="nav-about-tab"
-              data-toggle="tab"
-              href="#nav-about"
-              role="tab"
-              aria-controls="nav-about"
-              aria-selected="false"
-              >About <SuperColorPicker icon="font" button-color="light" base-color="#000000" /></a
-            >
-          </li>
-
-          <li class="nav-item">
-            <a
-              class="nav-item nav-link"
-              id="nav-story-tab"
-              data-toggle="tab"
-              href="#nav-story"
-              role="tab"
-              aria-controls="nav-story"
-              aria-selected="true"
-              >Story <SuperColorPicker icon="font" button-color="light" base-color="#007bff" /></a
-            >
-          </li>
-        </ul>
-      </div>
-    </div>
-    <!--
-              Intro section (with attributes & description)
-            -->
-    <div class="card-body">
-      <div class="container">
-        <SuperColorPicker icon="chess-board" button-color="secondary" base-color="#ffffff" />
-        <div class="row py-4">
-          <div
-            class="traits col-12 pl-3 col-lg-3 d-flex justify-content-start justify-content-lg-center"
-          >
-            <div>
-              <div>
-                <!--
-                          pronouns
-                        -->
-                <div
-                  v-for="(tag, index) in tags"
-                  style="
-                    transform: rotate(-1deg);
-                    padding: 2px 10px;
-                    width: auto;
-                    display: inline-block;
-                    border-radius: 20px;
-                    border: solid 1px black;
-                  "
-                >
-                  {{ tag }}
-                  <button
-                    @click="removeTag(index)"
-                    type="button"
-                    class="close margin-top"
-                    aria-label="Close"
+              <ul
+                class="nav nav-tabs card-header-tabs col"
+                style="justify-content: flex-end; align-self: flex-end"
+              >
+                <li class="nav-item">
+                  <a
+                    class="nav-item nav-link active"
+                    id="nav-about-tab"
+                    data-toggle="tab"
+                    href="#nav-about"
+                    role="tab"
+                    aria-controls="nav-about"
+                    aria-selected="false"
+                    :style="{ 'color': mainAboutColor }"
+                    >About <SuperColorPicker icon="font" button-color="light" base-color="#000000" @color-changed="changeAboutColor" /></a
                   >
-                    <span aria-hidden="true">&times;</span>
-                  </button>
-                </div>
-                <SuperColorPicker icon="chess-board" button-color="secondary" base-color="#ffffff" />
-                <SuperColorPicker icon="font" button-color="light" base-color="#000000" />
-                <form @submit.prevent="addTag">
-                  <div class="input-group my-2">
-                    <input
-                      v-model="inputValue"
-                      type="text"
-                      class="form-control"
-                      placeholder="tag"
-                      aria-label="tag"
-                      aria-describedby="add-tag"
-                    />
-                    <div class="input-group-append">
-                      <button
-                        class="btn btn-outline-secondary"
-                        type="submit"
-                        id="add-tag"
-                        :disabled="!inputValue"
-                      >
-                        <i class="fas fa-plus"></i>
-                      </button>
-                    </div>
-                  </div>
-                </form>
-              </div>
-              <HeaderCardPins />
+                </li>
+
+                <li class="nav-item">
+                  <a
+                    class="nav-item nav-link"
+                    id="nav-story-tab"
+                    data-toggle="tab"
+                    href="#nav-story"
+                    role="tab"
+                    aria-controls="nav-story"
+                    aria-selected="true"
+                    :style="{ 'color': mainStoryColor }"
+                    >Story <SuperColorPicker icon="font" button-color="light" base-color="#007bff" @color-changed="changeStoryColor" /></a
+                  >
+                </li>
+              </ul>
             </div>
           </div>
-          <!-- Description  -->
-          <div class="resume col-12 col-lg-9">
-            <div class="input-group">
-              <textarea
-                class="form-control"
-                aria-label="description"
-                placeholder="Write your description here!"
-              ></textarea>
-              <SuperColorPicker icon="font" button-color="light" base-color="#000000" />
+          <!--
+              Intro section (with attributes & description)
+            -->
+          <div class="card-body" :style="{ 'background': mainBackgroundColor }" style="border-bottom-right-radius: 20px; border-bottom-left-radius: 20px;">
+            <div class="container">
+              <SuperColorPicker icon="chess-board" button-color="secondary" base-color="#ffffff" @color-changed="changeBackgroundColor" />
+              <div class="row py-4">
+                <div
+                  class="traits col-12 pl-3 col-lg-3 d-flex justify-content-start justify-content-lg-center"
+                >
+                  <div>
+                    <div>
+                      <!--
+                          pronouns
+                        -->
+                      <div
+                        v-for="(tag, index) in tags"
+                        style="
+                          transform: rotate(-1deg);
+                          padding: 2px 10px;
+                          width: auto;
+                          display: inline-block;
+                          border-radius: 20px;
+                          border: solid 1px black;
+                        "
+                        :style="{ 'background': mainTagBgColor, 'color': mainTagTextColor }"
+                      >
+                        {{ tag }}
+                        <button
+                          @click="removeTag(index)"
+                          type="button"
+                          class="close margin-top"
+                          aria-label="Close"
+                        >
+                          <span aria-hidden="true">&times;</span>
+                        </button>
+                      </div>
+                      <SuperColorPicker icon="chess-board" button-color="secondary" base-color="#ffffff" @color-changed="changeTagBgColor" />
+                      <SuperColorPicker icon="font" button-color="light" base-color="#000000" @color-changed="changeTagTextColor" />
+                      <form @submit.prevent="addTag">
+                        <div class="input-group my-2">
+                          <input
+                            v-model="inputValue"
+                            type="text"
+                            class="form-control"
+                            placeholder="tag"
+                            aria-label="tag"
+                            aria-describedby="add-tag"
+                          />
+                          <div class="input-group-append">
+                            <button
+                              class="btn btn-outline-secondary"
+                              type="submit"
+                              id="add-tag"
+                              :disabled="!inputValue"
+                            >
+                              <i class="fas fa-plus"></i>
+                            </button>
+                          </div>
+                        </div>
+                      </form>
+                    </div>
+                    <HeaderCardPins />
+                  </div>
+                </div>
+                <!-- Description  -->
+                <div class="resume col-12 col-lg-9">
+                  <div class="input-group">
+                    <textarea
+                      class="form-control"
+                      aria-label="description"
+                      placeholder="Write your description here!"
+                      :style="{ 'color': mainDescriptionColor }"
+                    ></textarea>
+                    <SuperColorPicker icon="font" button-color="light" base-color="#000000" @color-changed="changeDescriptionColor" />
             </div>
             <p></p>
           </div>
@@ -149,6 +155,50 @@ const addTag = () => {
 const removeTag = (index) => {
   tags.value.splice(index, 1);
 };
+
+/* dynamic color changing */
+const mainHeaderColor = ref()
+const mainTitleColor = ref()
+const mainAboutColor = ref()
+const mainStoryColor = ref()
+const mainBackgroundColor = ref()
+const mainTagBgColor = ref()
+const mainTagTextColor = ref()
+const mainDescriptionColor = ref()
+
+const changeHeaderColor = (color) => {
+  mainHeaderColor.value = color
+}
+
+const changeTitleColor = (color) => {
+  mainTitleColor.value = color
+}
+
+const changeAboutColor = (color) => {
+  mainAboutColor.value = color
+}
+
+const changeStoryColor = (color) => {
+  mainStoryColor.value = color
+}
+
+const changeBackgroundColor = (color) => {
+  mainBackgroundColor.value = color
+}
+
+const changeTagBgColor = (color) => {
+  mainTagBgColor.value = color
+}
+
+const changeTagTextColor = (color) => {
+  mainTagTextColor.value = color
+}
+
+const changeDescriptionColor = (color) => {
+  mainDescriptionColor.value = color
+}
+
+
 </script>
 
 <style scoped>
