@@ -35,7 +35,7 @@
           :style="{'color': pinPlaceholderColor}"
         ></i>
       </div>
-      <SuperColorPicker icon="palette" button-color="secondary" base-color="#f0f0f0" @color-changed="changePlaceholderColor" class="to-exclude" />
+      <SuperColorPicker icon="palette" button-color="dark" base-color="#f0f0f0" @color-changed="changePlaceholderColor" class="to-exclude" />
       <aside
         class="tooltip-custom to-exclude"
         :class="{ 'tooltip-custom-show': showPopup }"
@@ -87,7 +87,7 @@
             />
             <div class="input-group-append">
               <button
-                class="btn btn-outline-secondary"
+                class="btn btn-outline-dark"
                 type="submit"
                 id="add-pin"
                 :disabled="!inputValue"

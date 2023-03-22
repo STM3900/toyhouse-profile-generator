@@ -14,7 +14,7 @@
         class="content-box color-picker"
         :class="{ 'color-popup-show': showPopup }"
         theme="light"
-        :color="baseColor"
+        :color="colorFinal"
         @changeColor="changeColor"
         :colors-default="[]"
       />
@@ -38,24 +38,39 @@ const props = defineProps({
   }
 });
 
+const colorFinal = ref("")
+
 const emit = defineEmits(["colorChanged"]);
 const showPopup = ref(false);
 const colorIcon = ref("");
 
 onMounted(() => {
   colorIcon.value = props.baseColor
+  colorFinal.value = props.baseColor
 })
 
 const togglePopup = () => {
   showPopup.value = !showPopup.value
 }
 
+const RGBAToHexA = (rgba, forceRemoveAlpha = false) => {
+  return "#" + rgba.replace(/^rgba?\(|\s+|\)$/g, '') // Get's rgba / rgb string values
+    .split(',') // splits them at ","
+    .filter((string, index) => !forceRemoveAlpha || index !== 3)
+    .map(string => parseFloat(string)) // Converts them to numbers
+    .map((number, index) => index === 3 ? Math.round(number * 255) : number) // Converts alpha to 255 number
+    .map(number => number.toString(16)) // Converts numbers to hex
+    .map(string => string.length === 1 ? "0" + string : string) // Adds 0 when length of one number is 1
+    .join("") // Puts the array to togehter to a string
+}
+
 const changeColor = (color) => {
-  /*
   const { r, g, b, a } = color.rgba;
   color.value = `rgba(${r}, ${g}, ${b}, ${a})`;
-  */
+  color.hex = RGBAToHexA(color.value)
+
   colorIcon.value = color.hex;
+  colorFinal.value = color.hex;
   emit("colorChanged", color.hex);
 };
 </script>
@@ -75,7 +90,7 @@ const changeColor = (color) => {
   padding: 10px;
   background: rgba(255, 255, 255, 0.8) !important;
   border-radius: 10px !important;
-  border: 1px solid rgba(0, 0, 0, 0.125);
+  border: 1px solid #ffffff;
 
   opacity: 0;
   cursor: default;
@@ -110,7 +125,5 @@ const changeColor = (color) => {
   border-bottom-right-radius: 10px !important;
 }
 
-.color-picker .color-type:not(.color-show + .color-type) {
-  display: none;
-}
+
 </style>

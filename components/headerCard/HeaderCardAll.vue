@@ -5,7 +5,7 @@
       style="border-top-left-radius: 20px; border-top-right-radius: 20px"
           :style="{ 'background': mainHeaderColor }"
           >
-          <SuperColorPicker icon="newspaper" button-color="secondary" base-color="#f7f7f7" @color-changed="changeHeaderColor" class="to-exclude" />
+          <SuperColorPicker icon="newspaper" button-color="dark" base-color="#f7f7f7" @color-changed="changeHeaderColor" class="to-exclude" />
             <div class="row mt-1">
               <!--
                   Character name
@@ -72,7 +72,7 @@
             -->
           <div class="card-body" :style="{ 'background': mainBackgroundColor }" style="border-bottom-right-radius: 20px; border-bottom-left-radius: 20px;">
             <div class="container">
-              <SuperColorPicker icon="chess-board" button-color="secondary" base-color="#ffffff" @color-changed="changeBackgroundColor" class="to-exclude" />
+              <SuperColorPicker icon="chess-board" button-color="dark" base-color="#ffffff" @color-changed="changeBackgroundColor" class="to-exclude" />
               <div class="row py-4">
                 <div
                   class="traits col-12 pl-3 col-lg-3 d-flex justify-content-start justify-content-lg-center"
@@ -104,7 +104,7 @@
                           <span aria-hidden="true">&times;</span>
                         </button>
                       </div>
-                      <SuperColorPicker icon="chess-board" button-color="secondary" base-color="#ffffff" @color-changed="changeTagBgColor" class="to-exclude" />
+                      <SuperColorPicker icon="chess-board" button-color="dark" base-color="#ffffff" @color-changed="changeTagBgColor" class="to-exclude" />
                       <SuperColorPicker icon="font" button-color="light" base-color="#000000" @color-changed="changeTagTextColor" class="to-exclude" />
                       <form @submit.prevent="addTag" class="to-exclude">
                         <div class="input-group my-2">
@@ -118,7 +118,7 @@
                           />
                           <div class="input-group-append">
                             <button
-                              class="btn btn-outline-secondary"
+                              class="btn btn-outline-dark"
                               type="submit"
                               id="add-tag"
                               :disabled="!inputValue"

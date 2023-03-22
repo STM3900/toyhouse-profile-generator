@@ -12,7 +12,7 @@
     "
   >
       <div class="card-body" :style="{ 'background': storyBackgroundColor }" style="border-radius: 20px;">
-        <SuperColorPicker icon="chess-board" button-color="secondary" base-color="#ffffff" @color-changed="changeBackgroundColor" class="to-exclude" />
+        <SuperColorPicker icon="chess-board" button-color="dark" base-color="#ffffff" @color-changed="changeBackgroundColor" class="to-exclude" />
         <div class="input-group to-exclude">
           <textarea
             class="form-control"

@@ -7,11 +7,11 @@
     >
       <i class="fas fa-heart-broken" style="opacity: 0.5"></i>
       Dislikes
-      <SuperColorPicker icon="newspaper" button-color="secondary" base-color="#f7f7f7" @color-changed="changeDislikeHeaderColor" class="to-exclude" />
+      <SuperColorPicker icon="newspaper" button-color="dark" base-color="#f7f7f7" @color-changed="changeDislikeHeaderColor" class="to-exclude" />
       <SuperColorPicker icon="font" button-color="light" base-color="#000000" @color-changed="changeDislikeTitleColor" class="to-exclude" />
     </h5>
     <div class="card-body px-3 pt-2 pb-3" :style="{'background': dislikeBackgroundColor}" style="border-bottom-right-radius: 20px; border-bottom-left-radius: 20px;">
-      <SuperColorPicker icon="chess-board" button-color="secondary" base-color="#ffffff" @color-changed="changeDislikeBackgroundColor" class="to-exclude" />
+      <SuperColorPicker icon="chess-board" button-color="dark" base-color="#ffffff" @color-changed="changeDislikeBackgroundColor" class="to-exclude" />
       <div class="dislikes">
         <ul class="list-group list-group-flush">
           <!-- put whathever you want here -->
@@ -44,7 +44,7 @@
           />
           <div class="input-group-append">
             <button
-              class="btn btn-outline-secondary"
+              class="btn btn-outline-dark"
               type="submit"
               id="add-like"
               :disabled="!inputValue"

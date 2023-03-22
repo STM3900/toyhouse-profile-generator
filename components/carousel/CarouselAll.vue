@@ -89,7 +89,7 @@
         />
         <div class="input-group-append">
           <button
-            class="btn btn-outline-secondary"
+            class="btn btn-outline-dark"
             type="submit"
             id="add-like"
             :disabled="!inputValue"
