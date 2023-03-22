@@ -6,7 +6,7 @@
     id="refs-img"
     class="carousel slide w-100 h-100"
     data-ride="carousel"
-    style="border-radius: 20px"
+    style="border-radius: 20px;"
   >
     <ol class="carousel-indicators">
       <li
@@ -30,6 +30,7 @@
         :class="{ active: item.isActive }"
         :href="item.img"
         target="_blank"
+        style="width: 100%;"
       >
         <div class="custom-delete to-exclude">
           <button
@@ -42,9 +43,8 @@
         </div>
         <img
           :src="item.img"
-          class="w-100 h-100"
           alt="..."
-          style="object-fit: cover; object-position: center top"
+          style="object-fit: cover; object-position: center top; width: 100%; height: 100%;"
         />
       </div>
       <div v-else class="carousel-item h-100 active">
