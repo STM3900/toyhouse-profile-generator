@@ -12,8 +12,8 @@
     "
   >
       <div class="card-body" :style="{ 'background': storyBackgroundColor }" style="border-radius: 20px;">
-        <SuperColorPicker icon="chess-board" button-color="secondary" base-color="#ffffff" @color-changed="changeBackgroundColor" />
-        <div class="input-group">
+        <SuperColorPicker icon="chess-board" button-color="secondary" base-color="#ffffff" @color-changed="changeBackgroundColor" class="to-exclude" />
+        <div class="input-group to-exclude">
           <textarea
             class="form-control"
             aria-label="story"
@@ -21,7 +21,7 @@
             style="min-height: 350px;"
             :style="{'color': storyTextColor}"
           ></textarea>
-          <SuperColorPicker icon="font" button-color="light" base-color="#000000" @color-changed="changeTextColor" />
+          <SuperColorPicker icon="font" button-color="light" base-color="#000000" @color-changed="changeTextColor" class="to-exclude" />
       </div>
     </div>
   </div>

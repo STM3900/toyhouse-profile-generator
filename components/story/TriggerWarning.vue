@@ -14,7 +14,7 @@
         "
       >
         <i class="fas fa-exclamation-triangle"></i>
-        <div class="form-group-sm ml-4 d-inline-block" style="width: 85%">
+        <div class="form-group-sm ml-4 d-inline-block to-exclude" style="width: 85%">
           <input
             type="text"
             class="form-control"
@@ -37,7 +37,7 @@
     v-else
     @click="enableTW = true"
     type="button"
-    class="btn btn-danger my-2"
+    class="btn btn-danger my-2 to-exclude"
   >
     Add Trigger Warning
   </button>

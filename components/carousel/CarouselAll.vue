@@ -31,7 +31,7 @@
         :href="item.img"
         target="_blank"
       >
-        <div class="custom-delete">
+        <div class="custom-delete to-exclude">
           <button
             @click="removeImg(index)"
             type="button"
@@ -75,7 +75,7 @@
       <span class="sr-only">Next</span>
     </a>
   </div>
-  <div>
+  <div class="to-exclude">
     <form @submit.prevent="addImg">
       <div class="input-group my-2">
         <input

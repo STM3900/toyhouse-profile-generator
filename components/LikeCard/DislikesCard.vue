@@ -7,11 +7,11 @@
     >
       <i class="fas fa-heart-broken" style="opacity: 0.5"></i>
       Dislikes
-      <SuperColorPicker icon="newspaper" button-color="secondary" base-color="#f7f7f7" @color-changed="changeDislikeHeaderColor" />
-      <SuperColorPicker icon="font" button-color="light" base-color="#000000" @color-changed="changeDislikeTitleColor" />
+      <SuperColorPicker icon="newspaper" button-color="secondary" base-color="#f7f7f7" @color-changed="changeDislikeHeaderColor" class="to-exclude" />
+      <SuperColorPicker icon="font" button-color="light" base-color="#000000" @color-changed="changeDislikeTitleColor" class="to-exclude" />
     </h5>
     <div class="card-body px-3 pt-2 pb-3" :style="{'background': dislikeBackgroundColor}" style="border-bottom-right-radius: 20px; border-bottom-left-radius: 20px;">
-      <SuperColorPicker icon="chess-board" button-color="secondary" base-color="#ffffff" @color-changed="changeDislikeBackgroundColor" />
+      <SuperColorPicker icon="chess-board" button-color="secondary" base-color="#ffffff" @color-changed="changeDislikeBackgroundColor" class="to-exclude" />
       <div class="dislikes">
         <ul class="list-group list-group-flush">
           <!-- put whathever you want here -->
@@ -24,7 +24,7 @@
             <button
               @click="removeItem(index)"
               type="button"
-              class="close"
+              class="close to-exclude"
               aria-label="Close"
             >
               <span aria-hidden="true">&times;</span>
@@ -32,7 +32,7 @@
           </li>
         </ul>
       </div>
-      <form @submit.prevent="addItem">
+      <form @submit.prevent="addItem" class="to-exclude">
         <div class="input-group my-2">
           <input
             v-model="inputValue"
@@ -54,7 +54,7 @@
           </div>
         </div>
       </form>
-      <SuperColorPicker icon="font" button-color="light" base-color="#000000" @color-changed="changeDislikeTextColor" />
+      <SuperColorPicker icon="font" button-color="light" base-color="#000000" @color-changed="changeDislikeTextColor" class="to-exclude" />
     </div>
   </div>
 </template>

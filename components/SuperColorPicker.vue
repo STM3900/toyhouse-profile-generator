@@ -2,7 +2,7 @@
   <ClientOnly>
     <button
       @click="togglePopup"
-      class="btn button-color-popup"
+      class="btn button-color-popup to-exclude"
       type="button"
       :class="`btn btn-${buttonColor}`"
       @focusout="showPopup = false"

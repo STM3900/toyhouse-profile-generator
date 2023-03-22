@@ -7,10 +7,10 @@
       alt="..."
     />
     <div class="media-body">
-      <h5 class="mt-0" :style="{'color': relationInfoTitleColor}">{{ relationInfo.title }} <SuperColorPicker icon="font" button-color="light" base-color="#000000" @colorChanged="changeInfoTitleColor" /></h5>
-      <span :style="{'color': relationInfoDescriptionColor}">{{ relationInfo.description }} <SuperColorPicker icon="font" button-color="light" base-color="#000000" @colorChanged="changeInfoDescriptionColor" /></span>
+      <h5 class="mt-0" :style="{'color': relationInfoTitleColor}">{{ relationInfo.title }} <SuperColorPicker icon="font" button-color="light" base-color="#000000" @colorChanged="changeInfoTitleColor" class="to-exclude"/></h5>
+      <span :style="{'color': relationInfoDescriptionColor}">{{ relationInfo.description }} <SuperColorPicker icon="font" button-color="light" base-color="#000000" @colorChanged="changeInfoDescriptionColor" class="to-exclude"/></span>
     </div>
-    <button @click="$emit('deleted')" type="button" class="close" aria-label="Close">
+    <button @click="$emit('deleted')" type="button" class="close to-exclude" aria-label="Close">
       <span aria-hidden="true">&times;</span>
     </button>
   </div>

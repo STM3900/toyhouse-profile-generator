@@ -10,11 +10,11 @@
     >
       <i class="fas fa-user-friends" style="opacity: 0.5"></i>
       Relations
-      <SuperColorPicker icon="newspaper" button-color="secondary" base-color="#f7f7f7" @color-changed="changeRelationCardHeaderColor" />
-      <SuperColorPicker icon="font" button-color="light" base-color="#000000" @color-changed="changeRelationCardTitleColor" />
+      <SuperColorPicker icon="newspaper" button-color="secondary" base-color="#f7f7f7" @color-changed="changeRelationCardHeaderColor" class="to-exclude" />
+      <SuperColorPicker icon="font" button-color="light" base-color="#000000" @color-changed="changeRelationCardTitleColor" class="to-exclude" />
       <button
         @click="$emit('relationCardDeleted')"
-        type="button"
+        type="button to-exclude"
         class="close"
         aria-label="Close"
       >
@@ -22,13 +22,13 @@
       </button>
     </h5>
     <div class="card-body py-20" :style="{'background': relationCardBackgroundColor}" style="border-bottom-right-radius: 20px; border-bottom-left-radius: 20px;">
-      <SuperColorPicker icon="chess-board" button-color="secondary" base-color="#ffffff" @color-changed="changeRelationCardBackgroundColor"/>
+      <SuperColorPicker icon="chess-board" button-color="secondary" base-color="#ffffff" @color-changed="changeRelationCardBackgroundColor" class="to-exclude"/>
       <RelationCard
         v-for="(relation, index) in relations"
         :relationInfo="relation"
         @deleted="deleteRelation(index)"
       />
-      <RelationCardForm @submited="addRelation" />
+      <RelationCardForm class="to-exclude" @submited="addRelation" />
     </div>
   </div>
 </template>

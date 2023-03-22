@@ -35,9 +35,9 @@
           :style="{'color': pinPlaceholderColor}"
         ></i>
       </div>
-      <SuperColorPicker icon="palette" button-color="secondary" base-color="#f0f0f0" @color-changed="changePlaceholderColor" />
+      <SuperColorPicker icon="palette" button-color="secondary" base-color="#f0f0f0" @color-changed="changePlaceholderColor" class="to-exclude" />
       <aside
-        class="tooltip-custom"
+        class="tooltip-custom to-exclude"
         :class="{ 'tooltip-custom-show': showPopup }"
       >
         <div>
@@ -72,7 +72,7 @@
       </aside>
       <aside
         :class="{ 'tooltip-nested-show': showNestedPopup }"
-        class="tooltip-nested"
+        class="tooltip-nested to-exclude"
       >
         <form @submit.prevent="addCustomPin(index)">
           <div class="input-group my-2">
