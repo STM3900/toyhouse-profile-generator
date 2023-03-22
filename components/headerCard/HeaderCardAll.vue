@@ -10,12 +10,14 @@
               <!--
                   Character name
                 -->
+              <h1 class="col hiden-element mb-0" :style="{ 'color': mainTitleColor }" style="font-size: 26px;">{{ nameInputValue }}</h1>
               <div class="input-group input-group-lg w-50 ml-2 to-exclude col">
                 <input
                   type="text"
                   class="form-control"
                   placeholder="Name"
                   aria-label="Name"
+                  v-model = nameInputValue
                   :style="{ 'color': mainTitleColor }"
                 />
                 <div class="input-group-append">
@@ -134,12 +136,14 @@
                 </div>
                 <!-- Description  -->
                 <div class="resume col-12 col-lg-9">
+                  <p :style="{ 'color': mainDescriptionColor }" style="white-space: pre-line;" class="hidden-element cringe">{{ descriptionInputValue }}</p>
                   <div class="input-group to-exclude">
                     <textarea
                       class="form-control"
                       aria-label="description"
                       placeholder="Write your description here!"
                       :style="{ 'color': mainDescriptionColor }"
+                      v-model="descriptionInputValue"
                     ></textarea>
                     <SuperColorPicker icon="font" button-color="light" base-color="#000000" @color-changed="changeDescriptionColor" class="to-exclude" />
                 </div>
@@ -163,6 +167,11 @@ const addTag = () => {
 const removeTag = (index) => {
   tags.value.splice(index, 1);
 };
+
+/* Input */
+const nameInputValue = ref("")
+const descriptionInputValue = ref("")
+
 
 /* dynamic color changing */
 const mainHeaderColor = ref("#f7f7f7")
@@ -229,5 +238,13 @@ textarea {
 
 .margin-top {
   margin-top: -2px;
+}
+
+.hiden-element {
+  display: none;
+}
+
+.cringe {
+  display: none !important;
 }
 </style>

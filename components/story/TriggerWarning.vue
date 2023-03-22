@@ -13,19 +13,22 @@
           display: inline-block;
         "
       >
-        <i class="fas fa-exclamation-triangle"></i>
+        <i class="fas fa-exclamation-triangle mr-2"></i>
+        <span class="hidden-element"> {{ twInputValue }}</span>
+        
         <div class="form-group-sm ml-4 d-inline-block to-exclude" style="width: 85%">
           <input
             type="text"
             class="form-control"
             placeholder="Trigger warning"
             aria-label="Trigger warning"
+            v-model="twInputValue"
           />
         </div>
         <button
           @click="enableTW = false"
           type="button"
-          class="close"
+          class="close to-exclude"
           aria-label="Close"
         >
           <span aria-hidden="true">&times;</span>
@@ -45,6 +48,13 @@
 
 <script setup>
 const enableTW = ref(true);
+
+/* Input */
+const twInputValue = ref("")
 </script>
 
-<style scoped></style>
+<style scoped>
+.hidden-element {
+  display: none;
+}
+</style>
