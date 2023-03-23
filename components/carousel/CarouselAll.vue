@@ -2,20 +2,10 @@
   <!--
                       Refs img carousel
                     -->
-  <div
-    id="refs-img"
-    class="carousel slide w-100 h-100"
-    data-ride="carousel"
-    style="border-radius: 20px;"
-  >
+  <div id="refs-img" class="carousel slide w-100 h-100" data-ride="carousel" style="border-radius: 20px;">
     <ol class="carousel-indicators">
-      <li
-        v-if="carouselImgs.length > 0"
-        v-for="(item, index) in carouselImgs"
-        data-target="#refs-img"
-        :data-slide-to="0"
-        :class="{ active: item.isActive }"
-      ></li>
+      <li v-if="carouselImgs.length > 0" v-for="(item, index) in carouselImgs" data-target="#refs-img" :data-slide-to="0"
+        :class="{ active: item.isActive }"></li>
       <li v-else data-target="#refs-img" :data-slide-to="0" class="active"></li>
     </ol>
     <!--
@@ -23,55 +13,26 @@
       use DIRECT LINK of img
     -->
     <div class="carousel-inner h-100" style="border-radius: 20px">
-      <div
-        v-if="carouselImgs.length > 0"
-        v-for="(item, index) in carouselImgs"
-        class="carousel-item h-100"
-        :class="{ active: item.isActive }"
-        :href="item.img"
-        target="_blank"
-        style="width: 100%;"
-      >
+      <div v-if="carouselImgs.length > 0" v-for="(item, index) in carouselImgs" class="carousel-item h-100"
+        :class="{ active: item.isActive }" :href="item.img" target="_blank" style="width: 100%;">
         <div class="custom-delete to-exclude">
-          <button
-            @click="removeImg(index)"
-            type="button"
-            class="btn btn btn-light"
-          >
+          <button @click="removeImg(index)" type="button" class="btn btn btn-light">
             <i class="fas fa-trash"></i>
           </button>
         </div>
-        <img
-          :src="item.img"
-          alt="..."
-          class="w-100 h-100"
-          style="object-fit: cover; object-position: center top; width: 100%; height: 100%;"
-        />
+        <img :src="item.img" alt="..." class="w-100 h-100"
+          style="object-fit: cover; object-position: center top; width: 100%; height: 100%;" />
       </div>
       <div v-else class="carousel-item h-100 active">
-        <img
-          src="http://tsr-industrie.fr/wp-content/uploads/2016/04/ef3-placeholder-image.jpg"
-          class="w-100 h-100"
-          alt="..."
-          style="object-fit: cover; object-position: center top"
-        />
+        <img src="http://tsr-industrie.fr/wp-content/uploads/2016/04/ef3-placeholder-image.jpg" class="w-100 h-100"
+          alt="..." style="object-fit: cover; object-position: center top" />
       </div>
     </div>
-    <a
-      class="carousel-control-prev"
-      href="#refs-img"
-      role="button"
-      data-slide="prev"
-    >
+    <a class="carousel-control-prev" href="#refs-img" role="button" data-slide="prev">
       <span class="carousel-control-prev-icon" aria-hidden="true"></span>
       <span class="sr-only">Previous</span>
     </a>
-    <a
-      class="carousel-control-next"
-      href="#refs-img"
-      role="button"
-      data-slide="next"
-    >
+    <a class="carousel-control-next" href="#refs-img" role="button" data-slide="next">
       <span class="carousel-control-next-icon" aria-hidden="true"></span>
       <span class="sr-only">Next</span>
     </a>
@@ -79,21 +40,10 @@
   <div class="to-exclude">
     <form @submit.prevent="addImg">
       <div class="input-group my-2">
-        <input
-          v-model="inputValue"
-          type="text"
-          class="form-control"
-          placeholder="direct link of image"
-          aria-label="direct link of image"
-          aria-describedby="add-like"
-        />
+        <input v-model="inputValue" type="text" class="form-control" placeholder="direct link of image"
+          aria-label="direct link of image" aria-describedby="add-like" />
         <div class="input-group-append">
-          <button
-            class="btn btn-outline-dark"
-            type="submit"
-            id="add-like"
-            :disabled="!inputValue"
-          >
+          <button class="btn btn-outline-dark" type="submit" id="add-like" :disabled="!inputValue">
             <i class="fas fa-plus"></i>
           </button>
         </div>

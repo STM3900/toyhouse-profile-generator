@@ -70,9 +70,9 @@
 
 <script setup>
 const notify = () => {
-  useNuxtApp().$toast('Copied to clipboard!' ,{
+  useNuxtApp().$toast('Copied to clipboard!', {
     icon: "🗸", pauseOnFocusLoss: false
-  }, );
+  },);
 };
 
 const enableRelations = ref(true);

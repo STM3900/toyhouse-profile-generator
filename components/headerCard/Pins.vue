@@ -2,96 +2,49 @@
   <ClientOnly>
     <div class="my-2 pins-section">
       <!--
-                          oriantation (put direct link on img)
-                        -->
+        oriantation (put direct link on img)
+      -->
       <!-- VALID FLAG IMG  -->
       <div v-for="(pin, index) in pins" class="d-inline mr-1">
-        <img
-          v-if="!pin.placeholder"
-          :src="pin.img"
-          alt=""
-          :class="{ blink: pin.isBlinking }"
-          style="
-            filter: contrast(0.9) drop-shadow(0 0 0.1rem black);
-            opacity: 0.9;
-            transform: rotate(5deg);
-            border-radius: 50%;
-            width: 30px;
-            height: 30px;
-          "
-          :style="
-            !pin.placeholder
-              ? 'filter: contrast(0.9) drop-shadow(0 0 0.1rem black); opacity: 0.9; transform: rotate(5deg);'
-              : 'filter: contrast(0) drop-shadow(0 0 0.1rem black); opacity: 0.2; transform: rotate(-5deg);'
-          "
-          @click="togglePopup(index)"
-        />
-        <i
-          v-else
-          class="fas fa-circle"
-          @click="togglePopup(index)"
-          :class="{ 'blink-placeholder': pin.isBlinking }"
+        <img v-if="!pin.placeholder" :src="pin.img" alt="" :class="{ blink: pin.isBlinking }" style="
+                filter: contrast(0.9) drop-shadow(0 0 0.1rem black);
+                opacity: 0.9;
+                transform: rotate(5deg);
+                border-radius: 50%;
+                width: 30px;
+                height: 30px;
+              " :style="
+                !pin.placeholder
+                  ? 'filter: contrast(0.9) drop-shadow(0 0 0.1rem black); opacity: 0.9; transform: rotate(5deg);'
+                  : 'filter: contrast(0) drop-shadow(0 0 0.1rem black); opacity: 0.2; transform: rotate(-5deg);'
+              " @click="togglePopup(index)" />
+        <i v-else class="fas fa-circle" @click="togglePopup(index)" :class="{ 'blink-placeholder': pin.isBlinking }"
           style="font-size: 32px; transform: translateY(8px); cursor: pointer;"
-          :style="{'color': pinPlaceholderColor}"
-        ></i>
+          :style="{ 'color': pinPlaceholderColor }"></i>
       </div>
-      <SuperColorPicker icon="palette" button-color="dark" base-color="#f0f0f0" @color-changed="changePlaceholderColor" class="to-exclude" />
-      <aside
-        class="tooltip-custom to-exclude"
-        :class="{ 'tooltip-custom-show': showPopup }"
-      >
+      <SuperColorPicker icon="palette" button-color="dark" base-color="#f0f0f0" @color-changed="changePlaceholderColor"
+        class="to-exclude" />
+      <aside class="tooltip-custom to-exclude" :class="{ 'tooltip-custom-show': showPopup }">
         <div>
-          <img
-            v-for="(pinImg, index) in pinsImg"
-            @click="changePin(index)"
-            :src="pinImg"
-            alt=""
-          />
-          <button
-            @click="
-              showNestedPopup = !showNestedPopup;
-              $refs.inputimg.focus();
-            "
-            type="button"
-            class="close close-button"
-            aria-label="Close"
-          >
-            <span aria-hidden="true" class="add"
-              ><i class="fas fa-image"></i
-            ></span>
+          <img v-for="(pinImg, index) in pinsImg" @click="changePin(index)" :src="pinImg" alt="" />
+          <button @click="
+            showNestedPopup = !showNestedPopup;
+          $refs.inputimg.focus();
+                                    " type="button" class="close close-button" aria-label="Close">
+            <span aria-hidden="true" class="add"><i class="fas fa-image"></i></span>
           </button>
-          <button
-            @click="removeItem()"
-            type="button"
-            class="close close-button"
-            aria-label="Close"
-          >
+          <button @click="removeItem()" type="button" class="close close-button" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
         </div>
       </aside>
-      <aside
-        :class="{ 'tooltip-nested-show': showNestedPopup }"
-        class="tooltip-nested to-exclude"
-      >
+      <aside :class="{ 'tooltip-nested-show': showNestedPopup }" class="tooltip-nested to-exclude">
         <form @submit.prevent="addCustomPin(index)">
           <div class="input-group my-2">
-            <input
-              v-model="inputValue"
-              type="text"
-              class="form-control"
-              placeholder="link of image"
-              aria-label="link of image"
-              aria-describedby="add-pin"
-              ref="inputimg"
-            />
+            <input v-model="inputValue" type="text" class="form-control" placeholder="link of image"
+              aria-label="link of image" aria-describedby="add-pin" ref="inputimg" />
             <div class="input-group-append">
-              <button
-                class="btn btn-outline-dark"
-                type="submit"
-                id="add-pin"
-                :disabled="!inputValue"
-              >
+              <button class="btn btn-outline-dark" type="submit" id="add-pin" :disabled="!inputValue">
                 <i class="fas fa-plus"></i>
               </button>
             </div>
@@ -297,6 +250,7 @@ const changePlaceholderColor = (color) => {
   margin-top: 20px;
   clip-path: polygon(100% 0, 0 0, 0 100%, 100% 100%);
 }
+
 .tooltip-nested {
   position: absolute;
 
@@ -338,10 +292,12 @@ const changePlaceholderColor = (color) => {
     opacity: 0.9;
     transform: scale(1) rotate(5deg);
   }
+
   50% {
     opacity: 0.7;
     transform: scale(0.98) rotate(5deg);
   }
+
   100% {
     opacity: 0.9;
     transform: scale(1) rotate(5deg);
@@ -353,10 +309,12 @@ const changePlaceholderColor = (color) => {
     opacity: 1;
     transform: scale(1) translateY(8px);
   }
+
   50% {
     opacity: 0.5;
     transform: scale(0.98) translateY(8px);
   }
+
   100% {
     opacity: 1;
     transform: scale(1) translateY(8px);

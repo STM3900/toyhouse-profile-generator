@@ -1,29 +1,23 @@
 <template>
   <!--
-                Story block
-              -->
-  <div
-    class="card mt-1"
-    style="
-      transform: rotate(-0.5deg);
-      display: inline-block;
-      border-radius: 20px;
-      width: 1000px;
-    "
-  >
-      <div class="card-body" :style="{ 'background': storyBackgroundColor }" style="border-radius: 20px;">
-        <SuperColorPicker icon="chess-board" button-color="dark" base-color="#ffffff" @color-changed="changeBackgroundColor" class="to-exclude" />
-        <p class="hidden-element py-3 px-3" :style="{'color': storyTextColor}" style="white-space: pre-line;">{{ storyInputValue }}</p>
-        <div class="input-group to-exclude">
-          <textarea
-            class="form-control"
-            aria-label="story"
-            placeholder="Write your story here c:"
-            style="min-height: 350px;"
-            :style="{'color': storyTextColor}"
-            v-model="storyInputValue"
-          ></textarea>
-          <SuperColorPicker icon="font" button-color="light" base-color="#000000" @color-changed="changeTextColor" class="to-exclude" />
+    Story block
+  -->
+  <div class="card mt-1" style="
+        transform: rotate(-0.5deg);
+        display: inline-block;
+        border-radius: 20px;
+        width: 1000px;
+      ">
+    <div class="card-body" :style="{ 'background': storyBackgroundColor }" style="border-radius: 20px;">
+      <SuperColorPicker icon="chess-board" button-color="dark" base-color="#ffffff" @color-changed="changeBackgroundColor"
+        class="to-exclude" />
+      <p class="hidden-element py-3 px-3" :style="{ 'color': storyTextColor }" style="white-space: pre-line;">{{
+        storyInputValue }}</p>
+      <div class="input-group to-exclude">
+        <textarea class="form-control" aria-label="story" placeholder="Write your story here c:"
+          style="min-height: 350px;" :style="{ 'color': storyTextColor }" v-model="storyInputValue"></textarea>
+        <SuperColorPicker icon="font" button-color="light" base-color="#000000" @color-changed="changeTextColor"
+          class="to-exclude" />
       </div>
     </div>
   </div>

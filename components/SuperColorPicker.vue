@@ -1,22 +1,10 @@
 <template>
   <ClientOnly>
-    <button
-      @click="togglePopup"
-      class="btn button-color-popup to-exclude"
-      type="button"
-      :class="`btn btn-${buttonColor}`"
-      v-click-outside="closePopup"
-    >
+    <button @click="togglePopup" class="btn button-color-popup to-exclude" type="button" :class="`btn btn-${buttonColor}`"
+      v-click-outside="closePopup">
       <i :class="`fas fa-${icon}`" :style="{ color: colorIcon }"></i>
-      <ColorPicker
-        @click="togglePopup"
-        class="content-box color-picker"
-        :class="{ 'color-popup-show': showPopup }"
-        theme="light"
-        :color="colorFinal"
-        @changeColor="changeColor"
-        :colors-default="[]"
-      />
+      <ColorPicker @click="togglePopup" class="content-box color-picker" :class="{ 'color-popup-show': showPopup }"
+        theme="light" :color="colorFinal" @changeColor="changeColor" :colors-default="[]" />
     </button>
   </ClientOnly>
 </template>
