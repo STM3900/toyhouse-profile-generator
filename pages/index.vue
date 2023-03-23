@@ -67,7 +67,7 @@
         </div>
       </div>
     </div>
-    <Credits />
+    <Credits class="to-exclude" />
   </div>
 </template>
 
