@@ -105,17 +105,17 @@
 <script setup>
 const pins = ref([
   {
-    img: "https://cdn-icons-png.flaticon.com/512/8259/8259335.png",
+    img: "https://cdn.discordapp.com/attachments/455791465734602782/1088251770721021952/Mibot_loading.gif",
     placeholder: false,
     isBlinking: false,
   },
   {
-    img: "https://cdn-icons-png.flaticon.com/512/8259/8259335.png",
-    placeholder: true,
+    img: "https://cdn-icons-png.flaticon.com/512/8259/8259314.png",
+    placeholder: false,
     isBlinking: false,
   },
   {
-    img: "https://cdn-icons-png.flaticon.com/512/8259/8259335.png",
+    img: "https://cdn-icons-png.flaticon.com/512/8259/8259314.png",
     placeholder: true,
     isBlinking: false,
   },

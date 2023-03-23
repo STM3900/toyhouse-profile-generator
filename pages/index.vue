@@ -2,7 +2,9 @@
   <div class="content" :style="{ 'background': mainBackgroundColor }" style="padding: 50px 0 100px 0;">
     <!--
         Code by Théo (STM3900)
+        Made with ToyHousePG (also by Théo (me (not you)))
         DONT USE IN WYSIWYG PLS AAAAAAAAA
+        USE INSTEAD THE ONLINE GENERATOR PLS I SPEND LIKE 25 HOURS MAKING THAT (im tired)
       -->
     <div class="d-flex justify-content-center">
       <div style="width: 1000px" class="mx-lg-5 mx-md-5 mx-sm-5 mx-3">
@@ -19,14 +21,25 @@
           <div class="tab-pane fade active show" id="nav-about" role="tabpanel" aria-labelledby="nav-about-tab">
             <div class="container px-0 mx-0">
               <div class="row">
+                <!--
+                  Carousel section
+                -->
                 <div class="col-lg-8 d-block col-12 pb-4 pb-lg-0" style="height: 670px;">
                   <CarouselAll />
                   <button @click="exportHTML" type="button" class="btn btn-info to-exclude">Render HTML</button>
                 </div>
                 <div class="col infos">
+                  <!--
+                    LikeCard
+                  -->
                   <LikeCard style="z-index: 9;" />
+                  <!--
+                    Dislike card
+                  -->
                   <LikeCardDislikesCard style="z-index: 8;" />
-
+                  <!--
+                    Relation Card (this one is optionnal)
+                  -->
                   <RelationsCard v-if="enableRelations" @relationCardDeleted="enableRelations = false" />
                   <button v-else @click="enableRelations = true" type="button" class="btn btn-light mt-4 to-exclude">
                     Add relation card
@@ -39,7 +52,13 @@
               Story tab
             -->
           <div class="tab-pane fade" id="nav-story" role="tabpanel" aria-labelledby="nav-story-tab">
+            <!--
+              Trigger warning (optionnal)
+            -->
             <StoryTriggerWarning />
+            <!--
+              Story card
+            -->
             <StoryCard />
             <button @click="exportHTML" type="button" class="btn btn-info to-exclude mt-3">Render HTML</button>
           </div>
@@ -50,6 +69,12 @@
 </template>
 
 <script setup>
+const notify = () => {
+  useNuxtApp().$toast('Copied to clipboard!' ,{
+    icon: "🗸", pauseOnFocusLoss: false
+  }, );
+};
+
 const enableRelations = ref(true);
 
 /* dynamic color changing */
@@ -69,6 +94,8 @@ const exportHTML = () => {
   const html = clone.outerHTML;
   console.log(html); // Le code HTML exporté sans les éléments à exclure
   navigator.clipboard.writeText(html);
+
+  notify()
 }
 </script>
 
