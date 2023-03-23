@@ -65,6 +65,7 @@
         </div>
       </div>
     </div>
+    <Credits />
   </div>
 </template>
 
