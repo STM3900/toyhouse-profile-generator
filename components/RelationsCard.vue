@@ -85,4 +85,12 @@ const changeInfoDescriptionColor = (color) => {
 }
 </script>
 
-<style scoped></style>
+<style scoped>
+.relations {
+  transition: 0.3s;
+  transform: translateX(10px);
+  opacity: 0;
+  animation: fadeInRight 0.5s ease forwards;
+  animation-delay: 0.5s;
+}
+</style>

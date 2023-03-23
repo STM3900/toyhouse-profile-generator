@@ -1,5 +1,5 @@
 <template>
-  <div class="card mb-4" style="border-radius: 20px; transform: rotate(-1deg)">
+  <div class="card mb-4 headerCard" style="border-radius: 20px; transform: rotate(-1deg)">
     <div class="card-header container" style="border-top-left-radius: 20px; border-top-right-radius: 20px"
       :style="{ 'background': mainHeaderColor }">
       <SuperColorPicker icon="newspaper" button-color="dark" base-color="#f7f7f7" @color-changed="changeHeaderColor"
@@ -199,6 +199,13 @@ const changeStoryBackgroundColor = (color) => {
 </script>
 
 <style scoped>
+.headerCard {
+  transition: 0.3s;
+  transform: translateX(-10px);
+  opacity: 0;
+  animation: fadeIn 0.5s ease forwards;
+}
+
 textarea {
   height: 120px;
 }

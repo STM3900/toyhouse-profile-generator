@@ -24,7 +24,7 @@
                 <!--
                   Carousel section
                 -->
-                <div class="col-lg-8 d-block col-12 pb-4 pb-lg-0" style="height: 670px;">
+                <div class="col-lg-8 d-block col-12 pb-4 pb-lg-0 carousel-section" style="height: 670px;">
                   <CarouselAll />
                   <button @click="exportHTML" type="button" class="btn btn-info to-exclude">Render HTML template</button>
                 </div>
@@ -55,12 +55,14 @@
             <!--
               Trigger warning (optionnal)
             -->
-            <StoryTriggerWarning />
-            <!--
+            <div class="story-section">
+              <StoryTriggerWarning />
+              <!--
               Story card
             -->
-            <StoryCard />
-            <button @click="exportHTML" type="button" class="btn btn-info to-exclude mt-3">Render HTML template</button>
+              <StoryCard />
+              <button @click="exportHTML" type="button" class="btn btn-info to-exclude mt-3">Render HTML template</button>
+            </div>
           </div>
         </div>
       </div>
@@ -126,5 +128,20 @@ const exportHTML = () => {
 <style scoped>
 .content {
   padding: 50px 0 100px 0;
+}
+
+.carousel-section {
+  transition: 0.3s;
+  transform: translateX(-10px);
+  opacity: 0;
+  animation: fadeIn 0.5s ease forwards;
+  animation-delay: 0.2s;
+}
+
+.story-section {
+  transition: 0.3s;
+  transform: translateX(-10px);
+  opacity: 0;
+  animation: fadeIn 0.5s ease forwards;
 }
 </style>

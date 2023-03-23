@@ -1,5 +1,5 @@
 <template>
-  <div class="card mt-4" style="border-radius: 20px; transform: rotate(2deg)">
+  <div class="card mt-4 likeCard" style="border-radius: 20px; transform: rotate(2deg)">
     <h5 class="card-header" style="border-top-right-radius: 20px; border-top-left-radius: 20px"
       :style="{ 'color': likeTitleColor, 'background': likeHeaderColor }">
       <i class="fas fa-heart" style="opacity: 0.5"></i>
@@ -78,4 +78,12 @@ const changelikeTextColor = (color) => {
 }
 </script>
 
-<style scoped></style>
+<style scoped>
+.likeCard {
+  transition: 0.3s;
+  transform: translateX(10px);
+  opacity: 0;
+  animation: fadeInRight 0.5s ease forwards;
+  animation-delay: 0.3s;
+}
+</style>
