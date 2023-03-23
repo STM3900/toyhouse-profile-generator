@@ -61,7 +61,6 @@
               Story card
             -->
               <StoryCard />
-              <button @click="exportHTML" type="button" class="btn btn-info to-exclude mt-3">Render HTML template</button>
             </div>
           </div>
         </div>

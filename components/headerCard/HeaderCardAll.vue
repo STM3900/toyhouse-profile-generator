@@ -31,6 +31,7 @@
                         line-height: 1.5;
                         border-radius: 10px;
                         user-select: none;
+                        margin-right: 10px;
                         ">
             About
             <SuperColorPicker icon="chess-board" button-color="dark" base-color="#ffffff"
