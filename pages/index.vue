@@ -84,19 +84,42 @@ const changeBackgroundColor = (color) => {
   mainBackgroundColor.value = color
 }
 
-const html = ref('');
+const format = (html) => {
+  var tab = '\t';
+  var result = '';
+  var indent = '';
+
+  html.split(/>\s*</).forEach(function (element) {
+    if (element.match(/^\/\w/)) {
+      indent = indent.substring(tab.length);
+    }
+
+    result += indent + '<' + element + '>\r\n';
+
+    if (element.match(/^<?\w[^>]*[^\/]$/) && !element.startsWith("input")) {
+      indent += tab;
+    }
+  });
+
+  return result.substring(1, result.length - 3);
+}
+
 
 const exportHTML = () => {
   const documentHtml = document.querySelector(".content")
   const clone = documentHtml.cloneNode(true);
+
   const toExclude = clone.querySelectorAll(".to-exclude");
   toExclude.forEach((el) => el.parentNode.removeChild(el));
-  const html = clone.outerHTML;
-  console.log(html); // Le code HTML exporté sans les éléments à exclure
+
+  const html = format(clone.outerHTML);
   navigator.clipboard.writeText(html);
 
   notify()
 }
+
+
+
 </script>
 
 <style scoped>
