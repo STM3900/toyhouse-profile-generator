@@ -26,7 +26,7 @@
                 -->
                 <div class="col-lg-8 d-block col-12 pb-4 pb-lg-0" style="height: 670px;">
                   <CarouselAll />
-                  <button @click="exportHTML" type="button" class="btn btn-info to-exclude">Render HTML</button>
+                  <button @click="exportHTML" type="button" class="btn btn-info to-exclude">Render HTML template</button>
                 </div>
                 <div class="col infos">
                   <!--
@@ -60,7 +60,7 @@
               Story card
             -->
             <StoryCard />
-            <button @click="exportHTML" type="button" class="btn btn-info to-exclude mt-3">Render HTML</button>
+            <button @click="exportHTML" type="button" class="btn btn-info to-exclude mt-3">Render HTML template</button>
           </div>
         </div>
       </div>

@@ -21,6 +21,16 @@
       />
     </div>
     <div class="form-group">
+      <label for="charLink">Character page link (optional)</label>
+      <input
+        v-model="inputs.link"
+        type="url"
+        class="form-control"
+        id="charLink"
+        placeholder="Link to character page"
+      />
+    </div>
+    <div class="form-group">
       <label for="profilePic">Character image</label>
       <input
         v-model="inputs.img"
@@ -52,14 +62,25 @@ const emit = defineEmits({
   },
 });
 
-const checkForm = computed(() => {
-  return Object.values(inputs.value).every((input) => input.trim() !== "");
-});
 
 const inputs = ref({
   img: "",
   title: "",
   description: "",
+  link: ""
+});
+
+function checkInputValues(inputs) {
+  for (const key in inputs) {
+    if (key !== "link" && inputs[key] === "") {
+      return false;
+    }
+  }
+  return true;
+}
+
+const checkForm = computed(() => {
+  return checkInputValues(inputs.value)
 });
 
 const submitForm = () => {
@@ -68,6 +89,7 @@ const submitForm = () => {
     img: "",
     title: "",
     description: "",
+    link: ""
   };
 };
 </script>

@@ -41,6 +41,7 @@ const relations = ref([
     title: "Name",
     description: "description",
     img: "https://cdn.discordapp.com/attachments/455791465734602782/1087278797621039144/Mibot_happy.jpg",
+    link: "https://theomigeat.com/"
   },
 ]);
 
@@ -49,6 +50,7 @@ const addRelation = (relation) => {
     title: relation.title,
     img: relation.img,
     description: relation.description,
+    link: relation.link,
   });
 };
 
