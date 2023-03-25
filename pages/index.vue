@@ -24,9 +24,9 @@
                 <!--
                   Carousel section
                 -->
-                <div class="col-lg-8 d-block col-12 pb-4 pb-lg-0 carousel-section" style="height: 670px;">
+                <div class="col-lg-8 d-block col-12 pb-4 pb-lg-0 carousel-section mb-4" style="height: 670px;">
                   <CarouselAll />
-                  <button @click="exportHTML" type="button" class="btn btn-info to-exclude">Render HTML template</button>
+                  <button @click="exportHTML" type="button" class="btn btn-info to-exclude d-none d-lg-block">Render HTML template</button>
                 </div>
                 <div class="col infos">
                   <!--
@@ -44,6 +44,7 @@
                   <button v-else @click="enableRelations = true" type="button" class="btn btn-light mt-4 to-exclude">
                     Add relation card
                   </button>
+                  <button @click="exportHTML" type="button" class="btn btn-info to-exclude d-lg-none d-xl-none mt-3">Render HTML template</button>
                 </div>
               </div>
             </div>
