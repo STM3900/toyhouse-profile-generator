@@ -38,7 +38,7 @@
           </button>
         </div>
       </aside>
-      <aside :class="{ 'tooltip-nested-show': showNestedPopup }" class="tooltip-nested to-exclude">
+      <aside :class="{ 'tooltip-nested-show': showNestedPopup }" class="tooltip-nested to-exclude mt-4">
         <form @submit.prevent="addCustomPin(index)">
           <div class="input-group my-2">
             <input v-model="inputValue" type="text" class="form-control" placeholder="link of image"
