@@ -37,7 +37,7 @@
       <span class="sr-only">Next</span>
     </a>
   </div>
-  <div class="to-exclude">
+  <div class="to-exclude mb-4">
     <form @submit.prevent="addImg">
       <div class="input-group my-2">
         <input v-model="inputValue" type="text" class="form-control" placeholder="direct link of image"

@@ -13,7 +13,7 @@
         <!--
             INTRO CARD
           -->
-        <HeaderCardAll style="z-index: 10;" />
+        <HeaderCardAll style="z-index: 10;" class="mt-2" />
         <!--
             Main section
           -->
@@ -47,7 +47,7 @@
                 </div>
               </div>
             </div>
-            <button @click="exportHTML" type="button" class="btn btn-info to-exclude d-none d-lg-block mx-auto mt-4 export-button">Copy HTML to clipboard</button>
+            <button @click="exportHTML" type="button" class="btn btn-info to-exclude d-none d-lg-block mx-auto mt-5 export-button">Copy HTML to clipboard</button>
           </div>
           <!--
               Story tab
