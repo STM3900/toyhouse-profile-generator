@@ -53,6 +53,11 @@ aside p {
 .kofi img {
   width: 15px;
   margin-right: 3px;
+  transition: 0.3s;
+}
+
+.kofi a:hover img {
+  transform: scale(1.05) rotate(10deg);
 }
 
 aside a {
