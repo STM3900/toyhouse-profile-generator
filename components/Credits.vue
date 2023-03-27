@@ -4,6 +4,7 @@
         href="https://twitter.com/STM3900" target="_blank" class="icon-twitter"><i class="fab fa-twitter"></i></a></p>
     <p>Pretty drawings made by <a href="https://toyhou.se/Ram_drawing">Ram</a> <a href="https://twitter.com/RAM_drawings"
         class="icon-twitter"><i class="fab fa-twitter"></i></a></p>
+    <p class="kofi"><a href="https://ko-fi.com/theoooh" target="_blank"><img src="~/assets/img/kofii.png" alt="">pls give me money</a></p>
   </aside>
 </template>
 
@@ -34,6 +35,24 @@ aside {
 aside p {
   margin: 0;
   font-size: 12px;
+}
+
+.kofi {
+  font-size: 10px;
+  margin-top: 5px;
+}
+
+.kofi a {
+  color: black;
+}
+
+.kofi a:hover {
+  color: black;
+}
+
+.kofi img {
+  width: 15px;
+  margin-right: 3px;
 }
 
 aside a {

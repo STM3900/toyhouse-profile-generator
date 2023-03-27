@@ -43,11 +43,11 @@
                   <button v-else @click="enableRelations = true" type="button" class="btn btn-light mt-4 to-exclude">
                     Add relation card
                   </button>
-                  <button @click="exportHTML" type="button" class="btn btn-info to-exclude d-lg-none d-xl-none mt-3">Copy HTML to clipboard</button>
+                  <button @click="exportHTML" type="button" class="btn btn-info to-exclude d-lg-none d-xl-none mt-3 export-button">Copy HTML to clipboard</button>
                 </div>
               </div>
             </div>
-            <button @click="exportHTML" type="button" class="btn btn-info to-exclude d-none d-lg-block mx-auto mt-4">Copy HTML to clipboard</button>
+            <button @click="exportHTML" type="button" class="btn btn-info to-exclude d-none d-lg-block mx-auto mt-4 export-button">Copy HTML to clipboard</button>
           </div>
           <!--
               Story tab
@@ -121,8 +121,6 @@ const exportHTML = () => {
   notify()
 }
 
-
-
 </script>
 
 <style scoped>
@@ -144,4 +142,17 @@ const exportHTML = () => {
   opacity: 0;
   animation: fadeIn 0.5s ease forwards;
 }
+
+.export-button {
+  transition: 0.3s;
+}
+
+.export-button:hover {
+  transform: rotate(-2deg);
+}
+
+.export-button:active {
+  transform: rotate(-2deg) scale(0.9);
+}
 </style>
+
