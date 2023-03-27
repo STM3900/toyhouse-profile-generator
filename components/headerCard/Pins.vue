@@ -145,6 +145,7 @@ const togglePopup = (index) => {
     for (let i = 0; i < pins.value.length; i++) {
       pins.value[i].isBlinking = false;
     }
+    showNestedPopup.value = false;
   }
 
   showPopup.value = !showPopup.value;
