@@ -2,7 +2,7 @@
   <aside>
     <p>Website made by <a href="https://theomigeat.com/" target="_blank" class="theo">Théo</a> <a
         href="https://twitter.com/STM3900" target="_blank" class="icon-twitter"><i class="fab fa-twitter"></i></a></p>
-    <p>Pretty drawings made by <a href="https://toyhou.se/Ram_drawing">Ram</a> <a href="https://twitter.com/RAM_drawings"
+    <p>Pretty drawings made by <a href="https://toyhou.se/Ram_drawing" target="_blank">Ram</a> <a href="https://twitter.com/RAM_drawings"
         class="icon-twitter"><i class="fab fa-twitter"></i></a></p>
     <p class="kofi"><a href="https://ko-fi.com/theoooh" target="_blank"><img src="~/assets/img/kofii.png" alt="">pls give me money</a></p>
   </aside>
