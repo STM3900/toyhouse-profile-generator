@@ -21,14 +21,14 @@ export default defineNuxtConfig({
         { property: 'og:url', content: 'https://toyhousepg.netlify.app/' },
         { property: 'og:title', content: 'Toyhouse Profile Generator' },
         { property: 'og:description', content: 'Generate customizable HTML templates for your Toyhouse, without changing any code.' },
-        { property: 'og:image', content: 'https://cdn.discordapp.com/attachments/349602713358696448/1090392601372413952/toyhousemetacard.jpg' },
+        { property: 'og:image', content: 'https://cdn.discordapp.com/attachments/349640980070137856/1090416744763498566/toyhousemetacardnew.jpg' },
     
         // twitter
         { property: 'twitter:card', content: 'summary_large_image' },
         { property: 'twitter:url', content: 'https://toyhousepg.netlify.app/' },
         { property: 'twitter:title', content: 'Toyhouse Profile Generator' },
         { property: 'twitter:description', content: 'Generate customizable HTML templates for your Toyhouse, without changing any code.' },
-        { property: 'twitter:image', content: 'https://cdn.discordapp.com/attachments/349602713358696448/1090392601372413952/toyhousemetacard.jpg' },
+        { property: 'twitter:image', content: 'https://cdn.discordapp.com/attachments/349640980070137856/1090416744763498566/toyhousemetacardnew.jpg' },
       ],
       viewport: 'width=device-width, initial-scale=1',
 			script: [
