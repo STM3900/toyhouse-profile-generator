@@ -4,6 +4,32 @@ export default defineNuxtConfig({
     head: {
       title: 'Toyhouse Profile Generator',
       charset: 'utf-8',
+      htmlAttrs: {
+        lang: 'en',
+      },
+      meta: [
+        { charset: 'utf-8' },
+        { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+        { name: 'format-detection', content: 'telephone=no' },
+    
+        // primary
+        { name: 'title', content: 'Toyhouse Profile Generator' },
+        { hid: 'description', name: 'description', content: 'Generate customizable HTML templates for your Toyhouse, without changing any code.' },
+    
+        // open graph / facebook
+        { property: 'og:type', content: 'website' },
+        { property: 'og:url', content: 'https://toyhousepg.netlify.app/' },
+        { property: 'og:title', content: 'Toyhouse Profile Generator' },
+        { property: 'og:description', content: 'Generate customizable HTML templates for your Toyhouse, without changing any code.' },
+        { property: 'og:image', content: 'https://cdn.discordapp.com/attachments/349602713358696448/1090392601372413952/toyhousemetacard.jpg' },
+    
+        // twitter
+        { property: 'twitter:card', content: 'summary_large_image' },
+        { property: 'twitter:url', content: 'https://toyhousepg.netlify.app/' },
+        { property: 'twitter:title', content: 'Toyhouse Profile Generator' },
+        { property: 'twitter:description', content: 'Generate customizable HTML templates for your Toyhouse, without changing any code.' },
+        { property: 'twitter:image', content: 'https://cdn.discordapp.com/attachments/349602713358696448/1090392601372413952/toyhousemetacard.jpg' },
+      ],
       viewport: 'width=device-width, initial-scale=1',
 			script: [
 				{src: "https://kit.fontawesome.com/373a1c097b.js", crossorigin: "anonymous"},
