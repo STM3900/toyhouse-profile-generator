@@ -1,5 +1,5 @@
 <template>
-  <div class="content" :style="{ 'background': mainBackgroundColor }" style="padding: 50px 0 100px 0;">
+  <div class="content" :style="{ 'background': mainBackgroundColor }" style="padding: 50px 0 100px 0; position: relative;">
     <!--
         Code by Théo (STM3900)
         Made with ToyHousePG (also by Théo (me (not you)))
@@ -67,7 +67,8 @@
         </div>
       </div>
     </div>
-    <Credits class="to-exclude" />
+
+    <CreditsToyhouse />
   </div>
 </template>
 
