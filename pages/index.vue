@@ -67,7 +67,7 @@
         </div>
       </div>
     </div>
-
+    <Credits class="to-exclude" />
     <CreditsToyhouse />
   </div>
 </template>
