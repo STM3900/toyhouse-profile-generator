@@ -80,7 +80,7 @@ const pinsImg = ref([
   "https://cdn-icons-png.flaticon.com/512/8259/8259340.png",
   "https://cdn-icons-png.flaticon.com/512/8259/8259318.png",
   "https://cdn-icons-png.flaticon.com/512/8259/8259334.png",
-  "https://cdn-icons-png.flaticon.com/512/8259/8259331.png",
+  "https://cdn.discordapp.com/attachments/455791465734602782/1092707781469016074/lesbian_flag.jpg",
   "https://cdn-icons-png.flaticon.com/512/8259/8259314.png",
   "https://cdn-icons-png.flaticon.com/512/8259/8259335.png",
   "https://cdn-icons-png.flaticon.com/512/8259/8259327.png",
@@ -92,7 +92,7 @@ const pinsImg = ref([
   "https://cdn-icons-png.flaticon.com/512/8259/8259312.png",
   "https://cdn-icons-png.flaticon.com/512/8259/8259316.png",
   "https://cdn-icons-png.flaticon.com/512/8259/8259321.png",
-  "https://cdn-icons-png.flaticon.com/512/8259/8259329.png",
+  "https://cdn.discordapp.com/attachments/455791465734602782/1092707781225758740/gay_flag.jpg",
   "https://cdn-icons-png.flaticon.com/512/8259/8259336.png",
 ]);
 
